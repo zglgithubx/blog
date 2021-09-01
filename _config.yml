@@ -105,6 +105,5 @@ deploy:
   type: git
   repo:
     github: git@github.com:zglgithubx/zglgithubx.github.io.git
-      branch: main
     gitee: git@gitee.com:zglgithubx/zglgithubx.git
-      branch: master
+  branch: master
