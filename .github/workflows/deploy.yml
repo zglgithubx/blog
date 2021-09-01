@@ -11,7 +11,7 @@ env:
   THEME_REPO: sanonz/hexo-theme-concise
   THEME_BRANCH: master
   DEPLOY_REPO: zglgithubx/zglgithubx.github.io
-  DEPLOY_BRANCH: main
+  DEPLOY_BRANCH: master
 
 jobs:
   build:
