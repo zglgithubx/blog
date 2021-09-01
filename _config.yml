@@ -103,5 +103,8 @@ theme: concise
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repository: git@github.com:zglgithubx/zglgithubx.github.io.git
-  branch: main
+  repo:
+    github: git@github.com:zglgithubx/zglgithubx.github.io.git
+      branch: main
+    gitee: git@gitee.com:zglgithubx/zglgithubx.git
+      branch: master
