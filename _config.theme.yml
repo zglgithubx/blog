@@ -44,7 +44,7 @@ git_commit:
 
 # 百度统计
 baidu:
-  id: e4027971a230b210f4671f485b33846a
+  id: 0
 
 # Miscellaneous
 rss: /atom.xml
