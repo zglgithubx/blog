@@ -67,7 +67,7 @@ jobs:
           npm run deploy
 
   sync: #同步到gitee仓库
-    needs: deploy
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Sync to Gitee
