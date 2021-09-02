@@ -1,41 +1,67 @@
-name: Hexo Deploy
+name: CI
 
 on:
   push:
     branches:
       - master
 
+env:
+  GIT_USER: zglgithubx
+  GIT_EMAIL: 786945363@qq.com
+  THEME_REPO: sanonz/hexo-theme-concise
+  THEME_BRANCH: master
+  DEPLOY_REPO: zglgithubx/zglgithubx.github.io
+  DEPLOY_BRANCH: master
+
 jobs:
   build:
-    runs-on: ubuntu-18.04
-    if: github.event.repository.owner.id == github.event.sender.id
+    name: Build on node ${{ matrix.node_version }} and ${{ matrix.os }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node_version: [12.x]
 
     steps:
-      - name: Checkout source
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Checkout theme repo
         uses: actions/checkout@v2
         with:
-          ref: master
+          repository: ${{ env.THEME_REPO }}
+          ref: ${{ env.THEME_BRANCH }}
+          path: themes/concise
 
-      - name: Setup Node.js
+      - name: Checkout deploy repo
+        uses: actions/checkout@v2
+        with:
+          repository: ${{ env.DEPLOY_REPO }}
+          ref: ${{ env.DEPLOY_BRANCH }}
+          path: .deploy_git
+
+      - name: Use Node.js ${{ matrix.node_version }}
         uses: actions/setup-node@v1
         with:
-          node-version: '12'
+          node-version: ${{ matrix.node_version }}
 
-      - name: Setup Hexo
+      - name: Configuration environment
         env:
-          ACTION_DEPLOY_KEY: ${{ secrets.HEXO_DEPLOY_PRI }}
+          HEXO_DEPLOY_PRI: ${{secrets.HEXO_DEPLOY_PRI}}
         run: |
+          sudo timedatectl set-timezone "Asia/Shanghai"
           mkdir -p ~/.ssh/
-          echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
-          chmod 700 ~/.ssh
+          echo "$HEXO_DEPLOY_PRI" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan github.com >> ~/.ssh/known_hosts
-          git config --global user.email "786945363@qq.com"
-          git config --global user.name "zglgithubx"
-          npm install hexo-cli -g
+          git config --global user.name $GIT_USER
+          git config --global user.email $GIT_EMAIL
+          cp _config.theme.yml themes/concise/_config.yml
+
+      - name: Install dependencies
+        run: |
           npm install
 
-      - name: Deploy
+      - name: Deploy hexo
         run: |
-          hexo clean
-          hexo deploy
+          npm run deploy
