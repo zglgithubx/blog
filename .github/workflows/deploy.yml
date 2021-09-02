@@ -6,7 +6,7 @@ on:
       - master
 
 env:
-  GIT_USER: zhuguangliang
+  GIT_USER: zglgithubx
   GIT_EMAIL: 786945363@qq.com
   THEME_REPO: sanonz/hexo-theme-concise
   THEME_BRANCH: master
