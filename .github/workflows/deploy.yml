@@ -76,7 +76,7 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.HEXO_DEPLOY_PRI }}
         with:
           # 来源仓库
-          source-repo: "git@github.com:zglgithubx/zglgithubx.git"
+          source-repo: "git@github.com:zglgithubx/zglgithubx.github.io.git"
           # 目标仓库
           destination-repo: "git@gitee.com:zglgithubx/zglgithubx.git"
 
