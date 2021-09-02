@@ -38,3 +38,4 @@ $ hexo deploy
 More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
 9月2日测试hexo博客部署
 第一次测试
+第二次测试
