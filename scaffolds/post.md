@@ -1,11 +1,4 @@
 ---
-title: {{ title }}
-date: {{ date }}
-tags:
----
-  
-
----
 title: {{ title }}  //文章标题
 date: {{ date }}    //文章创建时间
 permalink:          //文章显示连接
@@ -19,12 +12,11 @@ copyright: true     //增加底部的版权信息（需要配置）
 //首页文章展示缩略图
 <img src="https://" alt="" style="width:100%" />
 
-
 0x00 前言
 
 <!-- more -->
 
-## 0x01 
+## 0x01
 
 ## 0x02
 
