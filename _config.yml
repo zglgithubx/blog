@@ -57,12 +57,9 @@ future: true
 #  line_number: true
 #  tab_replace: ''
 highlight:
-  enable: false
-prismjs:
   enable: true
-  preprocess: true
-  line_number: true
-  tab_replace: ''
+  hljs: true
+  auto_detect: true
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
