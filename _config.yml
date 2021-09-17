@@ -50,21 +50,12 @@ future: true
 #  tab_replace: ' '
 #  wrap: true
 #  hljs: false
-#highlightjs: true
+highlightjs: true
 #prismjs:
 #  enable: false
 #  preprocess: true
 #  line_number: true
 #  tab_replace: ''
-highlight:
-  enable: true
-  auto_detect: false
-  line_number: true
-  tab_replace: '  '
-  wrap: true
-  hljs: false
-prismjs:
-  enable: false
 
 
 # Home page setting
