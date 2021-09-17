@@ -85,7 +85,7 @@ analytics:
   gtm_container_id: #<ID>
 
 # 评论框，目前支持 gitalk,gitment,valine,disqus,disqusjs,changyan,livere,DiscussBot 使用 false 可以关闭
-comment: gitalk
+comment: gitment
 gitalk:
   admin: nexmoe # 拥有对该repo进行操作的 GitHub username
   owner: nexmoe # 持有该 repo 的 GitHub username
@@ -93,10 +93,10 @@ gitalk:
   clientID: 80b2453b6d5f37ad6225 # GitHub Client ID
   clientSecret: 43e99fa852795c9a7b3eb924b2558c64b84bbdeb # GitHub Client Secret
 gitment:
-  owner: nexmoe # 持有该 repo 的 GitHub username
-  repo: nexmoe.github.io # 存放评论的 issue 所在的 repo
-  clientID: 80b2453b6d5f37ad6225 # GitHub Client ID
-  clientSecret: 43e99fa852795c9a7b3eb924b2558c64b84bbdeb # GitHub Client Secret
+  owner: zglgithubx
+  repo: zglgithubx.github.io
+  clientID: 77f4bb83639daa5c6318 # GitHub Client ID
+  clientSecret: 3f350eb0f0ee7b2754a71f9692a8e9532ee399df # GitHub Client Secret
 valine: 
   appId: <API_ID> # leancloud application app id
   appKey: <API_Key> # leancloud application app key
