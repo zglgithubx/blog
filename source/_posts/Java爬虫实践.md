@@ -492,7 +492,7 @@ System.out.println(mono.block());
 
 * 异步调用
 
-  * ```java
+  * ```
     Flux<String> flux = request.retrieve().bodyToFlux(String.class);
     Disposable subscribe = flux.subscribe(tweet -> {
         //如果jvm结束了，就不能显示了
@@ -506,7 +506,7 @@ System.out.println(mono.block());
 
   * 前面介绍的示例都是直接获取到了响应的内容，可能你会想获取到响应的头信息、Cookie等。那就可以在通过WebClient请求时把调用`retrieve()`改为调用`exchange()`，这样可以访问到代表响应结果的`org.springframework.web.reactive.function.client.ClientResponse`对象，通过它可以获取响应的状态码、Cookie等。下面的代码先是模拟用户进行了一次表单的登录操作，通过ClientResponse获取到了登录成功后的写入Cookie的sessionId，然后继续请求了用户列表。在请求获取用户列表时传递了存储了sessionId的Cookie。
 
-  * ```java
+  * ```
     String baseUrl = "http://localhost:8081";
     WebClient webClient = WebClient.create(baseUrl);
     
@@ -532,7 +532,7 @@ System.out.println(mono.block());
 
   * 除了可以通过`WebClient.create()`创建WebClient对象外，还可以通过`WebClient.builder()`创建一个`WebClient.Builder`对象，再对Builder对象进行一些配置后调用其`build()`创建WebClient对象。下面的代码展示了其用法，配置了baseUrl和默认的cookie信息。
 
-  * ```java
+  * ```
     String baseUrl = "http://localhost:8081";
     WebClient webClient = WebClient.builder().baseUrl(baseUrl).defaultCookie("cookieName", "cookieValue").build();
     //使用WebClient构建器，可以自定义选项：包括过滤器、默认标题、cookie、客户端连接器等
@@ -545,7 +545,7 @@ System.out.println(mono.block());
 
   * Builder还可以通过`clientConnector()`定义需要使用的ClientHttpConnector，默认将使用`org.springframework.http.client.reactive.ReactorClientHttpConnector`，其底层是基于netty的，如果你使用的是Maven，需要确保你的pom.xml中定义了如下依赖。
 
-  * ```java
+  * ```
     <dependency>
         <groupId>io.projectreactor.ipc</groupId>
         <artifactId>reactor-netty</artifactId>
@@ -557,13 +557,13 @@ System.out.println(mono.block());
 
     *WebClient也提供了Filter，对应于org.springframework.web.reactive.function.client.ExchangeFilterFunction接口，其接口方法定义如下。*
 
-  * ```java
+  * ```
     Mono<ClientResponse> filter(ClientRequest request, ExchangeFunction next)
     ```
 
   * 在进行拦截时可以拦截request，也可以拦截response。下面的代码定义的Filter就拦截了request，给每个request都添加了一个名为header1的header，值为value1。它也拦截了response，response中也是添加了一个新的header信息。拦截response时，如果新的ClientResponse对象是通过`ClientResponse.from(response)`创建的，新的response是不会包含旧的response的body的，如果需要可以通过`ClientResponse.Builder`的`body()`指定，其它诸如header、cookie、状态码是会包含的。
 
-  * ```java
+  * ```
     String baseUrl = "http://localhost:8081";
     WebClient webClient = WebClient.builder().baseUrl(baseUrl).filter((request, next) -> {
         ClientRequest newRequest = ClientRequest.from(request).header("header1", "value1").build();
@@ -580,7 +580,7 @@ System.out.println(mono.block());
 
 * 配置连接池，超时时间等
 
-  * ```java
+  * ```
     复制代码
     @Configuration
     public class WebClientConfig {
