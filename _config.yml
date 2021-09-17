@@ -58,7 +58,7 @@ future: true
 #  tab_replace: ''
 highlight:
   enable: true
-  hljs: true
+  hljs: false
   auto_detect: true
 
 # Home page setting
