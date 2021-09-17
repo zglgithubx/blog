@@ -392,7 +392,7 @@ System.out.println(mono.block());
 
   * 客户端可以建立一个满足需要的JSON格式的对象，然后直接把该对象作为请求体，WebClient会帮我们自动把它转换为JSON对象。
 
-    * ```j
+    * ```
       String baseUrl = "http://localhost:8081";
       WebClient webClient = WebClient.create(baseUrl);
       
@@ -417,7 +417,7 @@ System.out.println(mono.block());
 
   * 直接传递一个JSON字符串也是可以的，但是此时需要指定contentType为`application/json`，也可以加上charset。默认情况下WebClient将根据传递的对象在进行解析处理后自动选择ContentType。直接传递字符串时默认使用的ContentType会是`text/plain`。其它情况下也可以主动指定ContentType。
 
-    * ```java
+    * ```
       String baseUrl = "http://localhost:8081";
       WebClient webClient = WebClient.create(baseUrl);
       
@@ -453,7 +453,7 @@ System.out.println(mono.block());
 
 * 上传和下载文件
 
-  * ```java
+  * ```
     //上传
     HttpHeaders headers = new HttpHeaders();
     headers.setContentType(MediaType.IMAGE_PNG);
