@@ -16,10 +16,9 @@ image:              //自定义的文章摘要图片，只在页面展示，文�
 copyright: true     //增加底部的版权信息（需要配置）
 ---
 
-
-
 //首页文章展示缩略图
-<img src="https://" alt="" style="width:100%" />  
+<img src="https://" alt="" style="width:100%" />
+
 
 0x00 前言
 
