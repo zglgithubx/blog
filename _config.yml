@@ -6,7 +6,7 @@
 title: TomCat
 subtitle: ''
 description: ''
-keywords: 
+keywords:
 author: ZhuGuangliang
 language: zh-CN
 timezone: 'Asia/Shanghai'
@@ -43,19 +43,28 @@ render_drafts: false
 post_asset_folder: false
 relative_link: false
 future: true
+#highlight:
+#  enable: false
+#  line_number: false
+#  auto_detect: false
+#  tab_replace: '      '
+#  wrap: true
+#  hljs: false
+#highlightjs: true
+#prismjs:
+#  enable: false
+#  preprocess: true
+#  line_number: true
+#  tab_replace: ''
 highlight:
-  enable: false
-  line_number: false
+  enable: true
   auto_detect: false
-  tab_replace: '      '
+  line_number: true
+  tab_replace: '  '
   wrap: true
   hljs: false
-highlightjs: true
 prismjs:
   enable: false
-  preprocess: true
-  line_number: true
-  tab_replace: ''
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
