@@ -43,13 +43,13 @@ render_drafts: false
 post_asset_folder: false
 relative_link: false
 future: true
-#highlight:
-#  enable: true
-#  line_number: false
-#  auto_detect: false
-#  tab_replace: ' '
-#  wrap: true
-#  hljs: false
+highlight:
+  enable: true
+  line_number: false
+  auto_detect: false
+  tab_replace: ' '
+  wrap: true
+  hljs: false
 highlightjs: true
 #prismjs:
 #  enable: false
