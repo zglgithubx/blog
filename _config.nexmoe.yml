@@ -9,18 +9,19 @@ favicon:
 
 function: # 功能开关，可选值（true,false）
   globalToc: true # 开启该功能会自动开启文章 TOC（文章目录） 功能
-  
+
 # 附加图标库 使用说明：https://docs.nexmoe.com/config/icon
 iconlib: # //at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css
 
-search: 
+search:
   type: engine # 可选engine（用搜索引擎搜索）或 swiftype
   url: https://cn.bing.com/search?q=site:nexmoe.com # 搜索引擎地址，在type为swiftype时无效 e.g:https://www.google.com/search?q={你的博客链接}
   id: <swiftype-id> # swiftype的id，见启用教程。在type为engine时无效
 
 cdn: # 这里可以修改站点使用的库的CDN
-  highlight: 
-  disqusjs: 
+  highlightjs:
+    
+  disqusjs:
     css: https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqusjs.min.css
     js: https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqus.min.js
   gitalk:
@@ -30,7 +31,7 @@ cdn: # 这里可以修改站点使用的库的CDN
     js: https://cdn.jsdelivr.net/npm/valine
 
 menu:
-  回到首页: 
+  回到首页:
     - /
     - icon-home
 #  文章归档:  # 使用说明：https://docs.nexmoe.com/article/archive
@@ -39,7 +40,7 @@ menu:
   关于博客:
     - /about.html
     - icon-info-circle
-  我的朋友: 
+  我的朋友:
     - /PY.html # 使用说明：https://docs.nexmoe.com/article/py
 
 widgets:
@@ -54,7 +55,7 @@ widgets:
 maxTagcloud: 0  # 标签云组件显示的标签数量，0 表示不限制
 
 social:
-  QQ群: 
+  QQ群:
     - https://jq.qq.com/?_wv=1027&k=5CfKHun
     - icon-QQ
     - rgb(249, 174, 8)
@@ -69,14 +70,14 @@ social:
     - icon-github
     - rgb(25, 23, 23)
     - rgba(25, 23, 23, .15)
-    
+
 # 向搜索引擎验证你对站点的所有权，用于向搜索引擎提交 sitemap 和管理站点被搜索引擎收录的情况。
-site_verification: 
+site_verification:
   google:
   baidu:
 
 # 统计系统，目前支持 Google analytics.js 统计、Google Tag Manager 统计、CNZZ 统计、腾讯统计、51.La统计、百度统计
-analytics: 
+analytics:
   google_site_id: #<ID>
   gtags_site_id: #<ID>
   cnzz_site_id: #<ID>
@@ -98,7 +99,7 @@ gitment:
   repo: zglgithubx.github.io
   clientID: 77f4bb83639daa5c6318 # GitHub Client ID
   clientSecret: 3f350eb0f0ee7b2754a71f9692a8e9532ee399df # GitHub Client Secret
-valine: 
+valine:
   appId: <API_ID> # leancloud application app id
   appKey: <API_Key> # leancloud application app key
 disqus:
