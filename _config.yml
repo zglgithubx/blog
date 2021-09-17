@@ -43,7 +43,6 @@ render_drafts: false
 post_asset_folder: false
 relative_link: false
 future: true
-highlightjs: true;
 highlight:
   enable: false
   line_number: true
