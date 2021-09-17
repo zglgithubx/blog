@@ -65,7 +65,7 @@ Jsoup是用于解析HTML，就类似XML解析器用于解析XML。 Jsoup它解�
 
 * 获得Document对象后，接下来就是解析Document对象，并从中获取我们想要的元素了。
 
-  * ```j
+  * ```
     //doucment对象中获取相应标签的方法
     getElementById(String id)：通过id来获取
     getElementsByTag(String tagName)：通过标签名字来获取
@@ -129,7 +129,7 @@ Jsoup是用于解析HTML，就类似XML解析器用于解析XML。 Jsoup它解�
 
 * 使用`Jsoup.connect()` 方法从URL加载HTML
 
-  * ```java
+  * ```
     try{
         Document document=Jsoup.connect("http://www.baidu.com").get();
         System.out.println(document);
@@ -144,7 +144,7 @@ Jsoup是用于解析HTML，就类似XML解析器用于解析XML。 Jsoup它解�
 
 * 从文件加载HTML,使用`Jsoup.parse()` 方法
 
-  * ```java
+  * ```
     try
     {
         Document document = Jsoup.parse( new File( "D:/temp/index.html" ) , "utf-8" );
@@ -158,7 +158,7 @@ Jsoup是用于解析HTML，就类似XML解析器用于解析XML。 Jsoup它解�
 
 * 使用`Jsoup.parse()` 方法从字符串加载HTML
 
-  * ```java
+  * ```
     try
     {
         String html = "<html><head><title>First parse</title></head>"
@@ -174,7 +174,7 @@ Jsoup是用于解析HTML，就类似XML解析器用于解析XML。 Jsoup它解�
 
 * 获取HTML页面的图标
 
-  * ```java
+  * ```
     String favImage = "Not Found";
     try {
         Document document = Jsoup.parse(new File("D:/temp/index.html"), "utf-8");
@@ -201,7 +201,7 @@ Jsoup是用于解析HTML，就类似XML解析器用于解析XML。 Jsoup它解�
 
 * 获取HTML页面的所有链接
 
-  * ```java
+  * ```
     try
     {
         Document document = Jsoup.parse(new File("D:/temp/index.html"), "utf-8");
