@@ -28,7 +28,7 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render: _js/codeBlock.ejs
+skip_render:
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -93,7 +93,7 @@ pagination_dir: page
 # Include / Exclude file(s)
 ## include:/exclude: options only apply to the 'source/' folder
 include:
-#  - "_js/codeBlock.ejs"
+  - "_js/codeBlock.ejs"
 
 exclude:
 ignore:
