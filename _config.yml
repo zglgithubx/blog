@@ -6,10 +6,10 @@
 title: TomCat
 subtitle: ''
 description: ''
-keywords:
+keywords: 
 author: ZhuGuangliang
-language: en
-timezone: ''
+language: zh-CN
+timezone: 'Asiz/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
@@ -44,14 +44,14 @@ post_asset_folder: false
 relative_link: false
 future: true
 highlight:
-  enable: true
+  enable: false
   line_number: true
   auto_detect: true
   tab_replace: ''
   wrap: true
   hljs: false
 prismjs:
-  enable: false
+  enable: true
   preprocess: true
   line_number: true
   tab_replace: ''
