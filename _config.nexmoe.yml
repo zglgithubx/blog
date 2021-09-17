@@ -19,8 +19,6 @@ search:
   id: <swiftype-id> # swiftype的id，见启用教程。在type为engine时无效
 
 cdn: # 这里可以修改站点使用的库的CDN
-  highlight:
-    css: https://cdn.bootcdn.net/ajax/libs/highlight.js/11.2.0/styles/ir-black.min.css
   disqusjs:
     css: https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqusjs.min.css
     js: https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqus.min.js
