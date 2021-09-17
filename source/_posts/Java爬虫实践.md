@@ -29,7 +29,7 @@ Jsoup是用于解析HTML，就类似XML解析器用于解析XML。 Jsoup它解�
 
 #### ③下载依赖
 
-```java
+```
 <dependency>
   <!-- jsoup HTML parser library @ http://jsoup.org/ -->
   <groupId>org.jsoup</groupId>
@@ -42,7 +42,7 @@ Jsoup是用于解析HTML，就类似XML解析器用于解析XML。 Jsoup它解�
 
 * 从URL获取HTML
 
-  * ```java
+  * ```
     Document doc = Jsoup.connect("http://www.baidu.com/").get();
     String title = doc.title();
     ```
@@ -51,7 +51,7 @@ Jsoup是用于解析HTML，就类似XML解析器用于解析XML。 Jsoup它解�
 
   * 在Connection对象可以调用get()或post()方法执行请求，也可以在Connection对象中设置一些请求信息。比如：头信息，cookie ,请求等待时间，代理等。
 
-  * ```java
+  * ```
     Document doc = Jsoup.connect("http://example.com")
       .data("query", "Java")
       .userAgent("Mozilla")
@@ -65,7 +65,7 @@ Jsoup是用于解析HTML，就类似XML解析器用于解析XML。 Jsoup它解�
 
 * 获得Document对象后，接下来就是解析Document对象，并从中获取我们想要的元素了。
 
-  * ```java
+  * ```j
     //doucment对象中获取相应标签的方法
     getElementById(String id)：通过id来获取
     getElementsByTag(String tagName)：通过标签名字来获取
