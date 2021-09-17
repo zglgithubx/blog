@@ -220,7 +220,7 @@ Jsoup是用于解析HTML，就类似XML解析器用于解析XML。 Jsoup它解�
 
 * 获取HTML页面中所有的图像
 
-  * ```java
+  * ```
     try
     {
         Document document = Jsoup.parse(new File("D:/temp/index.html"), "utf-8");
@@ -242,7 +242,7 @@ Jsoup是用于解析HTML，就类似XML解析器用于解析XML。 Jsoup它解�
 
 * 修改获取的HTML标签
 
-  * ```java
+  * ```
     try
     {
         Document document = Jsoup.parse(new File("C:/Users/zkpkhua/Desktop/yiibai.com.html"), "utf-8");
@@ -262,7 +262,7 @@ Jsoup是用于解析HTML，就类似XML解析器用于解析XML。 Jsoup它解�
 
   * Jsoup在提供强大的API的同时，人性化方面也做得很好。在做网站的时候，经常会提供用户的评论的功能。有些用户比较淘气，会搞一些脚本到评论内容中，而这些脚本可能会破坏整个页面的功能，更严重的是获取一些机要信息，例如XSS跨站攻击之类的。
 
-  * ```java
+  * ```
     String dirtyHTML = "<p><a href='http://www.yiibai.com/' onclick='sendCookiesToMe()'>Link</a></p>";
     String cleanHTML = Jsoup.clean(dirtyHTML, Whitelist.basic());
     System.out.println(cleanHTML);
@@ -295,7 +295,7 @@ WebClient是从Spring WebFlux 5.0版本开始提供的一个非阻塞的基于�
 
 * 用maven引入依赖，或者直接下载jar包	
 
-```java
+```
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-webflux</artifactId>
@@ -306,7 +306,7 @@ WebClient是从Spring WebFlux 5.0版本开始提供的一个非阻塞的基于�
 
 通过`WebClient.create()`创建一个WebClient的实例，之后可以通过get()，post() 等选择调用方式，uri() 指定需要请求的路径，retrieve（） 用来发起请求并获得响应，`bodyToMono(String.class) `用来指定请求结果需要处理为String，并包装为Reactor的Mono对象。
 
-```java
+```
 WebClient webClient=WebClient.create();
 Mono<String> mono=webClient.get().uri("https://www.baidu.com").retrieve().bodyToMono(String.class);
 System.out.println(mono.block());
@@ -318,7 +318,7 @@ System.out.println(mono.block());
 
   * URL中也可以使用路径变量，路径变量的值可以通过uri方法的第2个参数指定。下面的代码中就定义了URL中拥有一个路径变量id，然后实际访问时该变量将取值1。
 
-    * ```java
+    * ```
       webClient.get().uri("http://localhost:8081/user/{id}", 1);
       ```
 
