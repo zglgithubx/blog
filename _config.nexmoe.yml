@@ -20,7 +20,7 @@ search:
 
 cdn: # 这里可以修改站点使用的库的CDN
   highlightjs:
-    
+    css: 
   disqusjs:
     css: https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqusjs.min.css
     js: https://cdn.jsdelivr.net/npm/disqusjs@1.2.5/dist/disqus.min.js
