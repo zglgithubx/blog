@@ -44,11 +44,11 @@ post_asset_folder: false
 relative_link: false
 future: true
 highlight:
-  enable: false
-  line_number: true
+  enable: true
+  line_number: false
   auto_detect: false
-  tab_replace: ''
-  wrap: false
+  tab_replace: '      '
+  wrap: true
   hljs: false
 highlightjs: true
 prismjs:
