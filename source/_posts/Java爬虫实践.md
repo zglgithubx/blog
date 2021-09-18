@@ -11,7 +11,7 @@ coverWidth: 1200
 coverHeight: 750  
 ---  
 
-Java写爬虫分为两步：第一步打开idea，第二步开始敲代码
+#### Java写爬虫分为两步：第一步打开idea，第二步开始敲代码...
 
 <!--more-->   
 
