@@ -52,7 +52,7 @@ future: true
 #  hljs: false
 highlightjs: true
 prism_plugin:
-  mode: 'preprocess'
+  mode: 'realtime'
   theme: 'atom-dark'
   line_number: true    # default false
   custom_css: ''     # optional
