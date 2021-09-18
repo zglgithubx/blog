@@ -54,10 +54,10 @@ future: true
 highlightjs: true
 highlight:
   enable: true
-#  line_number: true
+  line_number: true
   auto_detect: true
-#  tab_replace: ''
-#  wrap: true
+  tab_replace: ''
+  wrap: true
   hljs: true
 
 
