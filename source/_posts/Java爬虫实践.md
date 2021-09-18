@@ -294,7 +294,7 @@ WebClient是从Spring WebFlux 5.0版本开始提供的一个非阻塞的基于�
 
 * 用maven引入依赖，或者直接下载jar包	
 
-```
+``` java
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-webflux</artifactId>
@@ -305,7 +305,7 @@ WebClient是从Spring WebFlux 5.0版本开始提供的一个非阻塞的基于�
 
 通过`WebClient.create()`创建一个WebClient的实例，之后可以通过get()，post() 等选择调用方式，uri() 指定需要请求的路径，retrieve（） 用来发起请求并获得响应，`bodyToMono(String.class) `用来指定请求结果需要处理为String，并包装为Reactor的Mono对象。
 
-```
+``` java
 WebClient webClient=WebClient.create();
 Mono<String> mono=webClient.get().uri("https://www.baidu.com").retrieve().bodyToMono(String.class);
 System.out.println(mono.block());
