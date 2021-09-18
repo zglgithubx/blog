@@ -3,13 +3,12 @@ title: Java爬虫实践
 date: 2021-09-16 18:01:55
 cover: https://i.loli.net/2019/07/21/5d33d5dc1531213134.png
 tags: 
- - java
  - 爬虫
 categories: 
  - Java
 coverWidth: 1200
 coverHeight: 750  
----  
+---
 
 ### Java写爬虫分为两步：第一步打开idea，第二步开始敲代码...
 
@@ -64,8 +63,8 @@ Jsoup是用于解析HTML，就类似XML解析器用于解析XML。 Jsoup它解�
       .cookie("auth", "token")
       .timeout(3000)
       .post();
-   ```
-    
+  ```
+  
 
   * 发送请求后，就会获取一个Document文档对象，内容是当前链接的html
 
@@ -79,7 +78,7 @@ Jsoup是用于解析HTML，就类似XML解析器用于解析XML。 Jsoup它解�
     getElementsByAttribute(String key)：通过属性名字来获取
     getElementsByAttributeValue(String key, String value)：通过指定的属性名字，属性值来获取
     getAllElements()：获取所有元素
-   ```
+  ```
 
   * Jsoup的强大在于它对文档元素的检索，Select方法将返回一个Elements集合，并提供一组方法来抽取和处理结果，即Jsoup的选择器语法。
 
@@ -146,7 +145,7 @@ Jsoup是用于解析HTML，就类似XML解析器用于解析XML。 Jsoup它解�
     }
     
     
-    ```
+  ```
 
 * 从文件加载HTML,使用`Jsoup.parse()` 方法
 
@@ -160,7 +159,7 @@ Jsoup是用于解析HTML，就类似XML解析器用于解析XML。 Jsoup它解�
     {
         e.printStackTrace();
     }
-    ```
+  ```
 
 * 使用`Jsoup.parse()` 方法从字符串加载HTML
 
@@ -176,7 +175,7 @@ Jsoup是用于解析HTML，就类似XML解析器用于解析XML。 Jsoup它解�
     {
         e.printStackTrace();
     }
-    ```
+  ```
 
 * 获取HTML页面的图标
 
@@ -203,7 +202,7 @@ Jsoup是用于解析HTML，就类似XML解析器用于解析XML。 Jsoup它解�
         e.printStackTrace();
     }
     System.out.println(favImage);
-    ```
+  ```
 
 * 获取HTML页面的所有链接
 
@@ -222,7 +221,7 @@ Jsoup是用于解析HTML，就类似XML解析器用于解析XML。 Jsoup它解�
     {
         e.printStackTrace();
     }
-    ```
+  ```
 
 * 获取HTML页面中所有的图像
 
@@ -244,7 +243,7 @@ Jsoup是用于解析HTML，就类似XML解析器用于解析XML。 Jsoup它解�
         e.printStackTrace();
     }
     
-    ```
+  ```
 
 * 修改获取的HTML标签
 
@@ -262,7 +261,7 @@ Jsoup是用于解析HTML，就类似XML解析器用于解析XML。 Jsoup它解�
     {
         e.printStackTrace();
     }
-    ```
+  ```
 
 * 消除不信任的HTML（防止XSS攻击）
 
@@ -275,7 +274,7 @@ Jsoup是用于解析HTML，就类似XML解析器用于解析XML。 Jsoup它解�
     
     //执行后输出结果
     <p><a href="http://www.yiibai.com/" rel="nofollow">Link</a></p>
-    ```
+  ```
 
   * Jsoup使用一个Whitelist类来对HTML文档进行过滤，该类提供了几个常用的方法
 
@@ -326,13 +325,13 @@ System.out.println(mono.block());
 
     ``` java
       webClient.get().uri("http://localhost:8081/user/{id}", 1);
-      ```
+    ```
 
   * URL中也可以使用多个路径变量，多个路径变量的赋值将依次使用uri方法的第2个、第3个、第N个参数。下面的代码中就定义了URL中拥有路径变量p1和p2，实际访问的时候将被替换为var1和var2。所以实际访问的URL是`http://localhost:8081/user/var1/var2`。
 
     ``` java
       webClient.get().uri("http://localhost:8081/user/{p1}/{p2}", "var1", "var2");
-      ```
+    ```
 
   * 使用的路径变量也可以通过Map进行赋值。面的代码中就定义了URL中拥有路径变量p1和p2，实际访问的时候会从uriVariables中获取值进行替换。所以实际访问的URL是`http://localhost:8081/user/var1/1`
 
@@ -341,7 +340,7 @@ System.out.println(mono.block());
       uriVariables.put("p1", "var1");
       uriVariables.put("p2", 1);
       webClient.get().uri("http://localhost:8081/user/{p1}/{p2}", uriVariables);
-      ```
+    ```
 
 * 使用uriBuilder传递参数
 
@@ -358,7 +357,7 @@ System.out.println(mono.block());
                 .queryParam("name1", "啊")
                 .queryParam("name2", "是")
                 .build());
-    ```
+  ```
 
 * 指定baseUrl
 
@@ -368,7 +367,7 @@ System.out.println(mono.block());
       String baseUrl = "http://localhost:8081";
       WebClient webClient = WebClient.create(baseUrl);
       Mono<User> mono = webClient.get().uri("user/{id}", 1).retrieve().bodyToMono(User.class);
-      ```
+    ```
 
 * 表单提交
 
@@ -383,7 +382,7 @@ System.out.println(mono.block());
       map.add("password", "p123");
       
       Mono<String> mono = webClient.post().uri("/login").syncBody(map).retrieve().bodyToMono(String.class);
-      ```
+    ```
 
 * 请求时携带JSON参数
 
@@ -419,7 +418,7 @@ System.out.println(mono.block());
       
       Mono<Void> mono = webClient.post().uri("/user/add").syncBody(user).retrieve().bodyToMono(Void.class);
       mono.block();
-      ```
+    ```
 
   * 直接传递一个JSON字符串也是可以的，但是此时需要指定contentType为`application/json`，也可以加上charset。默认情况下WebClient将根据传递的对象在进行解析处理后自动选择ContentType。直接传递字符串时默认使用的ContentType会是`text/plain`。其它情况下也可以主动指定ContentType。
 
@@ -435,7 +434,7 @@ System.out.println(mono.block());
       
       Mono<Void> mono = webClient.post().uri("/user/add").contentType(MediaType.APPLICATION_JSON_UTF8).syncBody(userJson).retrieve().bodyToMono(Void.class);
       mono.block();
-      ```
+    ```
 
 * 处理WebClient错误
 
@@ -455,7 +454,7 @@ System.out.println(mono.block());
             .onErrorReturn("fallback");
     
     System.out.println("result:" + mono.block());
-    ```
+  ```
 
 * 上传和下载文件
 
@@ -494,7 +493,7 @@ System.out.println(mono.block());
     File out = new File(fileName);
     FileUtils.copyInputStreamToFile(resource.getInputStream(),out);
     LOGGER.info(out.getAbsolutePath());
-    ```
+  ```
 
 * 异步调用
 
@@ -506,7 +505,7 @@ System.out.println(mono.block());
     });
     System.out.println("result:exit");
     Thread.sleep(5000);
-    ```
+  ```
 
 * 获取响应头信息
 
@@ -532,7 +531,7 @@ System.out.println(mono.block());
             }
         });
     }
-    ```
+  ```
 
 * WebClient.Builder
 
@@ -547,7 +546,7 @@ System.out.println(mono.block());
             .defaultHeader(HttpHeaders.CONTENT_TYPE, "application/vnd.github.v3+json")
             .defaultHeader(HttpHeaders.USER_AGENT, "Spring 5 WebClient")
             .build()
-    ```
+  ```
 
   * Builder还可以通过`clientConnector()`定义需要使用的ClientHttpConnector，默认将使用`org.springframework.http.client.reactive.ReactorClientHttpConnector`，其底层是基于netty的，如果你使用的是Maven，需要确保你的pom.xml中定义了如下依赖。
 
@@ -557,7 +556,7 @@ System.out.println(mono.block());
         <artifactId>reactor-netty</artifactId>
         <version>0.7.8.RELEASE</version>
     </dependency>
-    ```
+  ```
 
   * 如果对默认的发送请求和处理响应结果的编解码不满意，还可以通过exchangeStrategies()定义使用的ExchangeStrategies。ExchangeStrategies中定义了用来编解码的对象，其也有对应的build()方法方便我们来创建ExchangeStrategies对象。
 
@@ -565,7 +564,7 @@ System.out.println(mono.block());
 
   ``` java
     Mono<ClientResponse> filter(ClientRequest request, ExchangeFunction next)
-    ```
+  ```
 
   * 在进行拦截时可以拦截request，也可以拦截response。下面的代码定义的Filter就拦截了request，给每个request都添加了一个名为header1的header，值为value1。它也拦截了response，response中也是添加了一个新的header信息。拦截response时，如果新的ClientResponse对象是通过`ClientResponse.from(response)`创建的，新的response是不会包含旧的response的body的，如果需要可以通过`ClientResponse.Builder`的`body()`指定，其它诸如header、cookie、状态码是会包含的。
 
@@ -580,7 +579,7 @@ System.out.println(mono.block());
             return newResponse;
         });
     }).build();
-    ```
+  ```
 
   * 如果定义的Filter只期望对某个或某些request起作用，可以在Filter内部通过request的相关属性进行拦截，比如cookie信息、header信息、请求的方式或请求的URL等。也可以通过`ClientRequest.attribute(attrName)`获取某个特定的属性，该属性是在请求时通过`attribute("attrName", "attrValue")`指定的。这跟在HttpServletRequest中添加的属性的作用范围是类似的。
 
@@ -615,7 +614,7 @@ System.out.println(mono.block());
             return WebClient.builder().clientConnector(connector).build();
         }
     }
-    ```
+  ```
 
 ### 3、参考
 
