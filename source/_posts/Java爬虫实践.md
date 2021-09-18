@@ -317,7 +317,7 @@ System.out.println(mono.block());
 
   * URL中也可以使用路径变量，路径变量的值可以通过uri方法的第2个参数指定。下面的代码中就定义了URL中拥有一个路径变量id，然后实际访问时该变量将取值1。
 
-    * ```
+    ``` java
       webClient.get().uri("http://localhost:8081/user/{id}", 1);
       ```
 
