@@ -11,7 +11,7 @@ coverWidth: 1200
 coverHeight: 750  
 ---  
 
-一次java爬虫实践
+Java写爬虫分为两步：
 
 <!--more-->   
 
