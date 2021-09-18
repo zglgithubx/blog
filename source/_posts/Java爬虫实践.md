@@ -41,7 +41,7 @@ Jsoup是用于解析HTML，就类似XML解析器用于解析XML。 Jsoup它解�
 
 * 从URL获取HTML
 
-  * ``` java
+  * ``` java 
     Document doc = Jsoup.connect("http://www.baidu.com/").get();
     String title = doc.title();
     ```
