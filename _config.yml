@@ -28,7 +28,7 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render: 
+skip_render:
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -43,13 +43,13 @@ render_drafts: false
 post_asset_folder: false
 relative_link: false
 future: true
-highlight:
-  enable: false
-  line_number: false
-  auto_detect: false
-  tab_replace: ' '
-  wrap: true
-  hljs: false
+#highlight:
+#  enable: false
+#  line_number: false
+#  auto_detect: false
+#  tab_replace: ' '
+#  wrap: true
+#  hljs: false
 highlightjs: true
 prism_plugin:
   mode: 'preprocess'
