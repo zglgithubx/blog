@@ -85,7 +85,7 @@ gitalk:
   clientSecret: 43e99fa852795c9a7b3eb924b2558c64b84bbdeb # GitHub Client Secret
 gitment:
   owner: zglgithubx
-  repo: zglgithubx.github.io
+  repo: zglgithubx/zglgithubx.github.io
   clientID: 77f4bb83639daa5c6318 # GitHub Client ID
   clientSecret: 3f350eb0f0ee7b2754a71f9692a8e9532ee399df # GitHub Client Secret
 valine:
