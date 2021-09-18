@@ -579,7 +579,7 @@ System.out.println(mono.block());
 
 * 配置连接池，超时时间等
 
-  * ```
+  ```
     @Configuration
     public class WebClientConfig {
         @Bean
