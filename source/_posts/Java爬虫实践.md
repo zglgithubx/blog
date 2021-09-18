@@ -64,7 +64,7 @@ Jsoup是用于解析HTML，就类似XML解析器用于解析XML。 Jsoup它解�
 
 * 获得Document对象后，接下来就是解析Document对象，并从中获取我们想要的元素了。
 
-  * ``` java
+  ``` java
     //doucment对象中获取相应标签的方法
     getElementById(String id)：通过id来获取
     getElementsByTag(String tagName)：通过标签名字来获取
@@ -72,7 +72,7 @@ Jsoup是用于解析HTML，就类似XML解析器用于解析XML。 Jsoup它解�
     getElementsByAttribute(String key)：通过属性名字来获取
     getElementsByAttributeValue(String key, String value)：通过指定的属性名字，属性值来获取
     getAllElements()：获取所有元素
-    ```
+   ```
 
   * Jsoup的强大在于它对文档元素的检索，Select方法将返回一个Elements集合，并提供一组方法来抽取和处理结果，即Jsoup的选择器语法。
 
