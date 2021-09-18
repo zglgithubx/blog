@@ -367,7 +367,7 @@ System.out.println(mono.block());
 
   * 当传递的请求体对象是一个MultiValueMap对象时，WebClient默认发起的是Form提交。下面的代码中就通过Form提交模拟了用户进行登录操作，给Form表单传递了参数username，值为u123，传递了参数password，值为p123。
 
-    *  ```
+    * ``` 
       String baseUrl = "http://localhost:8081";
       WebClient webClient = WebClient.create(baseUrl);
       
@@ -376,7 +376,7 @@ System.out.println(mono.block());
       map.add("password", "p123");
       
       Mono<String> mono = webClient.post().uri("/login").syncBody(map).retrieve().bodyToMono(String.class);
-       ```
+      ```
 
 * 请求时携带JSON参数
 

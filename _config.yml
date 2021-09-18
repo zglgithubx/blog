@@ -44,24 +44,19 @@ render_drafts: false
 post_asset_folder: true
 relative_link: false
 future: true
-#highlight:
-#  enable: false
-#  line_number: false
-#  auto_detect: false
-#  tab_replace: ' '
-#  wrap: true
-#  hljs: false
+highlight:
+  enable: false
+  line_number: true
+  auto_detect: false
+  tab_replace: ' '
+  wrap: true
+  hljs: false
 highlightjs: true
-#prism_plugin:
-#  mode: 'preprocess'
-#  theme: 'atom-dark'
-#  line_number: false
-#  custom_css: ''     # optional
-#prismjs:
-#  enable: false
-#  preprocess: true
-#  line_number: true
-#  tab_replace: ''
+prismjs:
+  enable: false
+  preprocess: true
+  line_number: true
+  tab_replace: ''
 
 
 # Home page setting
@@ -100,7 +95,7 @@ pagination_dir: page
 ## include:/exclude: options only apply to the 'source/' folder
 
 include:
-  - "my/*"
+
 exclude:
 
 ignore:
