@@ -144,7 +144,7 @@ Jsoup是用于解析HTML，就类似XML解析器用于解析XML。 Jsoup它解�
 
 * 从文件加载HTML,使用`Jsoup.parse()` 方法
 
-  * ```
+  * ``` 
     try
     {
         Document document = Jsoup.parse( new File( "D:/temp/index.html" ) , "utf-8" );
@@ -158,7 +158,7 @@ Jsoup是用于解析HTML，就类似XML解析器用于解析XML。 Jsoup它解�
 
 * 使用`Jsoup.parse()` 方法从字符串加载HTML
 
-  * ```
+  * ``` 
     try
     {
         String html = "<html><head><title>First parse</title></head>"
@@ -433,7 +433,7 @@ System.out.println(mono.block());
 
 * 处理WebClient错误
 
-  * ```java
+  * ``` java
     WebClient.ResponseSpec retrieve = request.retrieve();
     
     Mono<String> mono = retrieve
