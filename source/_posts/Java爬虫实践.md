@@ -41,23 +41,23 @@ Jsoup是用于解析HTML，就类似XML解析器用于解析XML。 Jsoup它解�
 
 * 从URL获取HTML
 
-  *``` java 
+  ``` java 
     Document doc = Jsoup.connect("http://www.baidu.com/").get();
     String title = doc.title();
-    ```
+  ```
 
   * 其中其中JSoup.connet("http://xxx")方法返回了一个Connection对象
 
   * 在Connection对象可以调用get()或post()方法执行请求，也可以在Connection对象中设置一些请求信息。比如：头信息，cookie ,请求等待时间，代理等。
 
-  *``` java 
+  ``` java 
     Document doc = Jsoup.connect("http://example.com")
       .data("query", "Java")
       .userAgent("Mozilla")
       .cookie("auth", "token")
       .timeout(3000)
       .post();
-    ```
+   ```
     
 
   * 发送请求后，就会获取一个Document文档对象，内容是当前链接的html
