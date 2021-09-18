@@ -128,7 +128,7 @@ Jsoup是用于解析HTML，就类似XML解析器用于解析XML。 Jsoup它解�
 
 * 使用`Jsoup.connect()` 方法从URL加载HTML
 
-  * ``` java
+  ``` java
     try{
         Document document=Jsoup.connect("http://www.baidu.com").get();
         System.out.println(document);
@@ -143,7 +143,7 @@ Jsoup是用于解析HTML，就类似XML解析器用于解析XML。 Jsoup它解�
 
 * 从文件加载HTML,使用`Jsoup.parse()` 方法
 
-  * ``` 
+  ``` java 
     try
     {
         Document document = Jsoup.parse( new File( "D:/temp/index.html" ) , "utf-8" );
