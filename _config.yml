@@ -54,13 +54,12 @@ future: true
 highlightjs: true
 highlight:
   enable: true
-  hljs: true
-  auto_detect: false
-prismjs:
-  enable: false
-  preprocess: true
   line_number: true
+  auto_detect: false
   tab_replace: ''
+  wrap: true
+  hljs: true
+
 
 
 # Home page setting
