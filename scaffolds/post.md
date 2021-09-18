@@ -5,8 +5,7 @@ permalink:
 categories:        
 tags:               
 description:        
-image:             
-copyright: true     
+cover
 ---
 
 <!-- more -->
