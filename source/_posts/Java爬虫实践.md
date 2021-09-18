@@ -157,7 +157,7 @@ Jsoup是用于解析HTML，就类似XML解析器用于解析XML。 Jsoup它解�
 
 * 使用`Jsoup.parse()` 方法从字符串加载HTML
 
-  * ``` 
+  ``` java 
     try
     {
         String html = "<html><head><title>First parse</title></head>"
@@ -173,7 +173,7 @@ Jsoup是用于解析HTML，就类似XML解析器用于解析XML。 Jsoup它解�
 
 * 获取HTML页面的图标
 
-  * ```
+  ``` java
     String favImage = "Not Found";
     try {
         Document document = Jsoup.parse(new File("D:/temp/index.html"), "utf-8");
@@ -200,7 +200,7 @@ Jsoup是用于解析HTML，就类似XML解析器用于解析XML。 Jsoup它解�
 
 * 获取HTML页面的所有链接
 
-  * ```
+  ``` java
     try
     {
         Document document = Jsoup.parse(new File("D:/temp/index.html"), "utf-8");
@@ -219,7 +219,7 @@ Jsoup是用于解析HTML，就类似XML解析器用于解析XML。 Jsoup它解�
 
 * 获取HTML页面中所有的图像
 
-  * ```
+  ``` java
     try
     {
         Document document = Jsoup.parse(new File("D:/temp/index.html"), "utf-8");
@@ -241,7 +241,7 @@ Jsoup是用于解析HTML，就类似XML解析器用于解析XML。 Jsoup它解�
 
 * 修改获取的HTML标签
 
-  * ```
+  ``` java
     try
     {
         Document document = Jsoup.parse(new File("C:/Users/zkpkhua/Desktop/yiibai.com.html"), "utf-8");
@@ -261,7 +261,7 @@ Jsoup是用于解析HTML，就类似XML解析器用于解析XML。 Jsoup它解�
 
   * Jsoup在提供强大的API的同时，人性化方面也做得很好。在做网站的时候，经常会提供用户的评论的功能。有些用户比较淘气，会搞一些脚本到评论内容中，而这些脚本可能会破坏整个页面的功能，更严重的是获取一些机要信息，例如XSS跨站攻击之类的。
 
-  * ```
+  ``` java
     String dirtyHTML = "<p><a href='http://www.yiibai.com/' onclick='sendCookiesToMe()'>Link</a></p>";
     String cleanHTML = Jsoup.clean(dirtyHTML, Whitelist.basic());
     System.out.println(cleanHTML);
