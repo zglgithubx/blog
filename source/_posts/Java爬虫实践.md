@@ -323,13 +323,13 @@ System.out.println(mono.block());
 
   * URL中也可以使用多个路径变量，多个路径变量的赋值将依次使用uri方法的第2个、第3个、第N个参数。下面的代码中就定义了URL中拥有路径变量p1和p2，实际访问的时候将被替换为var1和var2。所以实际访问的URL是`http://localhost:8081/user/var1/var2`。
 
-    * ```
+    ``` java
       webClient.get().uri("http://localhost:8081/user/{p1}/{p2}", "var1", "var2");
       ```
 
   * 使用的路径变量也可以通过Map进行赋值。面的代码中就定义了URL中拥有路径变量p1和p2，实际访问的时候会从uriVariables中获取值进行替换。所以实际访问的URL是`http://localhost:8081/user/var1/1`
 
-    * ```
+    ``` java
       Map<String, Object> uriVariables = new HashMap<>();
       uriVariables.put("p1", "var1");
       uriVariables.put("p2", 1);
@@ -338,7 +338,7 @@ System.out.println(mono.block());
 
 * 使用uriBuilder传递参数
 
-  * ```
+  ``` java
     String baseUrl = "http://192.1681.5.9:8989";
     WebClient webClient = WebClient.create(baseUrl);
     WebClient.RequestBodyUriSpec request = webClient.method(HttpMethod.POST);
@@ -357,7 +357,7 @@ System.out.println(mono.block());
 
   * 在应用中使用WebClient时也许你要访问的URL都来自同一个应用，只是对应不同的URL地址，这个时候可以把公用的部分抽出来定义为baseUrl，然后在进行WebClient请求的时候只指定相对于baseUrl的URL部分即可。这样的好处是你的baseUrl需要变更的时候可以只要修改一处即可。下面的代码在创建WebClient时定义了baseUrl为`http://localhost:8081`，在发起Get请求时指定了URL为`/user/1`，而实际上访问的URL是`http://localhost:8081/user/1`。
 
-    * ```
+    ``` java
       String baseUrl = "http://localhost:8081";
       WebClient webClient = WebClient.create(baseUrl);
       Mono<User> mono = webClient.get().uri("user/{id}", 1).retrieve().bodyToMono(User.class);
@@ -367,7 +367,7 @@ System.out.println(mono.block());
 
   * 当传递的请求体对象是一个MultiValueMap对象时，WebClient默认发起的是Form提交。下面的代码中就通过Form提交模拟了用户进行登录操作，给Form表单传递了参数username，值为u123，传递了参数password，值为p123。
 
-    * ``` 
+    ``` java 
       String baseUrl = "http://localhost:8081";
       WebClient webClient = WebClient.create(baseUrl);
       
@@ -391,7 +391,7 @@ System.out.println(mono.block());
 
   * 客户端可以建立一个满足需要的JSON格式的对象，然后直接把该对象作为请求体，WebClient会帮我们自动把它转换为JSON对象。
 
-    ```
+    ``` java
       String baseUrl = "http://localhost:8081";
       WebClient webClient = WebClient.create(baseUrl);
       
@@ -416,7 +416,7 @@ System.out.println(mono.block());
 
   * 直接传递一个JSON字符串也是可以的，但是此时需要指定contentType为`application/json`，也可以加上charset。默认情况下WebClient将根据传递的对象在进行解析处理后自动选择ContentType。直接传递字符串时默认使用的ContentType会是`text/plain`。其它情况下也可以主动指定ContentType。
 
-    ```
+    ``` java
       String baseUrl = "http://localhost:8081";
       WebClient webClient = WebClient.create(baseUrl);
       
@@ -452,7 +452,7 @@ System.out.println(mono.block());
 
 * 上传和下载文件
 
-  ```
+  ``` java
     //上传
     HttpHeaders headers = new HttpHeaders();
     headers.setContentType(MediaType.IMAGE_PNG);
@@ -491,7 +491,7 @@ System.out.println(mono.block());
 
 * 异步调用
 
-  ```
+  ``` java
     Flux<String> flux = request.retrieve().bodyToFlux(String.class);
     Disposable subscribe = flux.subscribe(tweet -> {
         //如果jvm结束了，就不能显示了
@@ -505,7 +505,7 @@ System.out.println(mono.block());
 
   * 前面介绍的示例都是直接获取到了响应的内容，可能你会想获取到响应的头信息、Cookie等。那就可以在通过WebClient请求时把调用`retrieve()`改为调用`exchange()`，这样可以访问到代表响应结果的`org.springframework.web.reactive.function.client.ClientResponse`对象，通过它可以获取响应的状态码、Cookie等。下面的代码先是模拟用户进行了一次表单的登录操作，通过ClientResponse获取到了登录成功后的写入Cookie的sessionId，然后继续请求了用户列表。在请求获取用户列表时传递了存储了sessionId的Cookie。
 
-  ```
+  ``` java
     String baseUrl = "http://localhost:8081";
     WebClient webClient = WebClient.create(baseUrl);
     
@@ -531,7 +531,7 @@ System.out.println(mono.block());
 
   * 除了可以通过`WebClient.create()`创建WebClient对象外，还可以通过`WebClient.builder()`创建一个`WebClient.Builder`对象，再对Builder对象进行一些配置后调用其`build()`创建WebClient对象。下面的代码展示了其用法，配置了baseUrl和默认的cookie信息。
 
-  ```
+  ``` java
     String baseUrl = "http://localhost:8081";
     WebClient webClient = WebClient.builder().baseUrl(baseUrl).defaultCookie("cookieName", "cookieValue").build();
     //使用WebClient构建器，可以自定义选项：包括过滤器、默认标题、cookie、客户端连接器等
@@ -544,7 +544,7 @@ System.out.println(mono.block());
 
   * Builder还可以通过`clientConnector()`定义需要使用的ClientHttpConnector，默认将使用`org.springframework.http.client.reactive.ReactorClientHttpConnector`，其底层是基于netty的，如果你使用的是Maven，需要确保你的pom.xml中定义了如下依赖。
 
-  ```
+  ``` java
     <dependency>
         <groupId>io.projectreactor.ipc</groupId>
         <artifactId>reactor-netty</artifactId>
@@ -556,13 +556,13 @@ System.out.println(mono.block());
 
     *WebClient也提供了Filter，对应于org.springframework.web.reactive.function.client.ExchangeFilterFunction接口，其接口方法定义如下。*
 
-  ```
+  ``` java
     Mono<ClientResponse> filter(ClientRequest request, ExchangeFunction next)
     ```
 
   * 在进行拦截时可以拦截request，也可以拦截response。下面的代码定义的Filter就拦截了request，给每个request都添加了一个名为header1的header，值为value1。它也拦截了response，response中也是添加了一个新的header信息。拦截response时，如果新的ClientResponse对象是通过`ClientResponse.from(response)`创建的，新的response是不会包含旧的response的body的，如果需要可以通过`ClientResponse.Builder`的`body()`指定，其它诸如header、cookie、状态码是会包含的。
 
-  ```
+  ``` java
     String baseUrl = "http://localhost:8081";
     WebClient webClient = WebClient.builder().baseUrl(baseUrl).filter((request, next) -> {
         ClientRequest newRequest = ClientRequest.from(request).header("header1", "value1").build();
@@ -579,7 +579,7 @@ System.out.println(mono.block());
 
 * 配置连接池，超时时间等
 
-  ```
+  ``` java
     @Configuration
     public class WebClientConfig {
         @Bean
