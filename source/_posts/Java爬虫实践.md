@@ -382,16 +382,16 @@ System.out.println(mono.block());
 
   * 假设现在拥有一个新增User的接口，按照接口定义客户端应该传递一个JSON对象，格式如下：
 
-    * ```
+    ```
       {
           "name":"张三",
           "username":"zhangsan"
       }
-      ```
+    ```
 
   * 客户端可以建立一个满足需要的JSON格式的对象，然后直接把该对象作为请求体，WebClient会帮我们自动把它转换为JSON对象。
 
-    * ```
+    ```
       String baseUrl = "http://localhost:8081";
       WebClient webClient = WebClient.create(baseUrl);
       
