@@ -5,7 +5,7 @@ cover: https://i.loli.net/2019/07/21/5d33d5dc1531213134.png
 coverWidth: 1200
 coverHeight: 750
 ---  
-
+{% include_code lang:javascript test.js %}
 
 ### 1、我的见解
 

@@ -51,11 +51,11 @@ future: true
 #  wrap: true
 #  hljs: false
 highlightjs: true
-prism_plugin:
-  mode: 'preprocess'
-  theme: 'atom-dark'
-  line_number: false
-  custom_css: ''     # optional
+#prism_plugin:
+#  mode: 'preprocess'
+#  theme: 'atom-dark'
+#  line_number: false
+#  custom_css: ''     # optional
 #prismjs:
 #  enable: false
 #  preprocess: true
