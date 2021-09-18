@@ -7,5 +7,7 @@ tags:
 cover:/img/1.jpg
 ---
 
+Test
+
 <!-- more -->
 
