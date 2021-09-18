@@ -94,7 +94,6 @@ pagination_dir: page
 ## include:/exclude: options only apply to the 'source/' folder
 include:
   - "_js/codeBlock.js"
-
 exclude:
 ignore:
 
