@@ -1,13 +1,11 @@
 ---
-title: {{ title }} 
+title: {{ title }}
 date: {{ date }}
-permalink:          
-categories:        
-tags:               
-description:        
-cover
+permalink:
+categories:
+tags:
+cover:
 ---
 
-：
-
 <!-- more -->
+
