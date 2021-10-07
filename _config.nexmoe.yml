@@ -72,7 +72,7 @@ analytics:
   cnzz_site_id: #<ID>
   tencent_site_id: #<ID>
   la_site_id: #<ID>
-  baidu_site_id: #<ID>
+  baidu_site_id: 7740e0cda3394720bd8ba44eb505635c
   gtm_container_id: #<ID>
 
 # 评论框，目前支持 gitalk,gitment,valine,disqus,disqusjs,changyan,livere,DiscussBot 使用 false 可以关闭
