@@ -2,9 +2,9 @@
 title: KMP算法
 date: 2021-10-16 11:27:33
 permalink:
-categories:
+categories: 数据结构
 tags:
-cover:
+cover: https://cdn.jsdelivr.net/gh/zglgithubx/picture/img/202110171224111.png
 ---
 
 ### 由来
