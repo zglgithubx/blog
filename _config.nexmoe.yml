@@ -76,7 +76,7 @@ analytics:
   gtm_container_id: #<ID>
 
 # 评论框，目前支持 gitalk,gitment,valine,disqus,disqusjs,changyan,livere,DiscussBot 使用 false 可以关闭
-comment: gitalk
+comment: gitment
 gitalk:
   admin: zglgithubx # 拥有对该repo进行操作的 GitHub username
   owner: zglgithubx # 持有该 repo 的 GitHub username
