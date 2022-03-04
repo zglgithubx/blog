@@ -3,18 +3,18 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: TomXun
-subtitle: ''
-description: ''
-keywords:
+title: ☀
+subtitle: ☀
+description: '01001010101010101010010010010101011101010101010'
+keywords: '生而为人，积极向上'
 author: ZhuGuangliang
 language: zh-CN
 timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://zglgithubx.github.io
-permalink: :year/:month/:day/:title/
+url: https://www.marchsoft.club
+permalink: :hash.html
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -44,13 +44,6 @@ render_drafts: false
 post_asset_folder: false
 relative_link: false
 future: true
-#highlight:
-#  enable: false
-#  line_number: true
-#  auto_detect: false
-#  tab_replace: ' '
-#  wrap: true
-#  hljs: false
 highlightjs: true
 highlight:
   enable: true
@@ -97,13 +90,6 @@ pagination_dir: page
 # Include / Exclude file(s)
 ## include:/exclude: options only apply to the 'source/' folder
 
-include:
-
-exclude:
-
-ignore:
-
-
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
@@ -115,5 +101,4 @@ deploy:
   type: git
   repo:
       github: git@github.com:zglgithubx/zglgithubx.github.io.git
-      #gitee: git@gitee.com:zglgithubx/zglgithubx.git
   branch: master
