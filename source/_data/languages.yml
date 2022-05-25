@@ -1,0 +1,15 @@
+# language
+zh-CN:
+  menu:
+    Message Board: 留言板
+  post:
+    comments:
+      waline: 评论数
+
+  counter:
+    archive_posts:
+      zero: 暂无文章。
+      one: 目前共计 1 篇文章。
+      other: "目前共计 %d 篇文章。"
+  state:
+    posts: 文章

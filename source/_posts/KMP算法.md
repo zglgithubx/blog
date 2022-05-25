@@ -1,10 +1,11 @@
 ---
 title: KMP算法
+categories: 数据结构
+cover: 'https://cdn.jsdelivr.net/gh/zglgithubx/picture/img/202110171224111.png'
+abbrlink: 35921
 date: 2021-10-16 11:27:33
 permalink:
-categories: 数据结构
 tags:
-cover: https://cdn.jsdelivr.net/gh/zglgithubx/picture/img/202110171224111.png
 ---
 
 ### 由来

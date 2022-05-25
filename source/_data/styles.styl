@@ -1,0 +1,110 @@
+// site title
+.site-title {
+  font-size: 1.375em;
+  font-weight: bold;
+  // font-family: Georgia, sans;
+}
+
+.site-subtitle {
+  font-size: 0.9em;
+  font-weight: bold;
+  font-family: Georgia, sans;
+}
+
+.menu-item a {
+    font-size: 0.8em;
+}
+
+////////////////////////////////
+// 优化文章显示细节
+// post
+////////////////////////////////
+
+// 设置超链接颜色与选中效果
+.post-body p a{
+  color: #0593d3;
+  border-bottom: none;
+  border-bottom: 1px solid #0593d3;
+  &:hover {
+    color: #fc6423;
+    border-bottom: none;
+    border-bottom: 1px solid #fc6423;
+  }
+}
+
+.posts-expand .post-title {
+    font-size: 1.375em;
+}
+
+//文章页面标题下方分类信息使用Noto Serif SC字体在微信和safari浏览器会导致发表于占两行显示
+.posts-expand .post-meta-container {
+  // font-family: Lato, 'PingFang SC'; //, 'Microsoft YaHei', sans-serif;
+}
+
+// 设置文章内容字体型号
+.post-body {
+  font-size: 0.9em;
+}
+
+code {
+  font-size: 0.9em;
+}
+
+table {
+  font-size: 0.9em;
+}
+
+.post-copyright ul {
+  font-size: 0.8em;
+}
+
+// 页面底部标签加粗加大显示
+.post-tags a {
+  font-size: 0.875em;
+  // font-weight: bold;
+}
+
+// 上一篇 下一篇 加粗加大显示
+.post-nav-item a {
+  // font-size: 0.875em;
+  // font-weight: bold;
+}
+
+// .contactme {
+//   color: #bbb;
+//   padding: 1em 1.5em;
+//   text-align: center;
+//   background: var(--card-bg-color);
+//   border-left: 3px solid #ff2a2a;
+//   margin: 1em 0 0;
+// }
+
+// p {
+//   margin: 0 0 5px;
+// }
+
+// 引用块的样式，左边加个绿条
+// blockquote {
+//   padding: 8px 20px;
+//   margin-bottom: 10px;
+//   // background: #f6f6f6;
+//   border-left: 5px solid rgba(0, 152, 116, 1) !important;
+// }
+
+// 归档页面月份-日期显示字体增大
+.posts-collapse .post-content .post-meta-container {
+    font-size: 0.875em;
+}
+
+//优化Waline评论区代码块的字体大小
+.comments {
+  overflow: unset;
+}
+
+.v[data-class=v] code[class*=language-], .v[data-class=v] pre[class*=language-] {
+  font-size: 0.875em !important;
+}
+
+.wl-power {
+  display: none;
+}

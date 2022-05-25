@@ -8,7 +8,7 @@ on:
 env:
   GIT_USER: zglgithubx
   GIT_EMAIL: 786945363@qq.com
-  THEME_REPO: sanonz/hexo-theme-concise
+  THEME_REPO: next-theme/hexo-theme-next
   THEME_BRANCH: master
   DEPLOY_REPO: zglgithubx/zglgithubx.github.io
   DEPLOY_BRANCH: master

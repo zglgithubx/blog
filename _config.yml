@@ -1,12 +1,10 @@
-# Hexo Configuration
-## Docs: https://hexo.io/docs/configuration.html
-## Source: https://github.com/hexojs/hexo/
+
 
 # Site
-title: ☀
-subtitle: ☀
+title: 'NoBug'
+subtitle: 'No'
 description: '01001010101010101010010010010101011101010101010'
-keywords: '生而为人，积极向上'
+keywords: 'Bug'
 author: ZhuGuangliang
 language: zh-CN
 timezone: 'Asia/Shanghai'
@@ -93,7 +91,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: nexmoe
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment

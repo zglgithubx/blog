@@ -1,10 +1,11 @@
 ---
 title: 消息队列之RabbitMQ学习笔记
-date: 2021-11-07 11:30:11
-permalink:
 categories: 消息队列
 tags: RabbitMQ
-cover: https://blog.fundebug.com/2018/04/20/rabbitmq_tutorial/rabbitmq.png
+cover: 'https://blog.fundebug.com/2018/04/20/rabbitmq_tutorial/rabbitmq.png'
+abbrlink: 49673
+date: 2021-11-07 11:30:11
+permalink:
 ---
 
 ### 什么是消息队列
