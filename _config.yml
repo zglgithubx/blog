@@ -12,11 +12,11 @@ timezone: 'Asia/Shanghai'
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://zglgithubx.github.io
-permalink: :hash.html
+permalink: posts/:abbrlink.html
 permalink_defaults:
 pretty_urls:
-  trailing_index: false # Set to false to remove trailing 'index.html' from permalinks
-  trailing_html: false # Set to false to remove trailing '.html' from permalinks
+  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
+  trailing_html: true # Set to false to remove trailing '.html' from permalinks
 
 # Directory
 source_dir: source
@@ -91,6 +91,97 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
+# nofollow 标签是由谷歌领头创新的一个反垃圾链接的标签，并被百度、yahoo 等各大搜索引擎广泛支持.
+# 引用 nofollow 标签的目的是：用于指示搜索引擎不要追踪（即抓取）网页上的带有 nofollow 属性的任何出站链接，以减少垃圾链接的分散网站权重。
+# 这里推荐 hexo-autonofollow 插件来解决。
+nofollow:
+  enable: true
+  exclude: # 例外的链接，可将友情链接放置此处
+    - eg.com
+
+# 安装搜索插件
+# npm install hexo-generator-searchdb --save
+# Local Search
+# Dependencies: https://github.com/next-theme/hexo-generator-searchdb
+search:
+  path: search.xml
+  field: post
+  content: true
+  format: html
+  limit: 1000
+
+
+lazyload:
+  enable: true
+  imgContainer: true
+  post:
+     only: true
+     excludeEncrypt: true
+  loadingImg: # eg /images/loading.gif
+
+# hexo-renderer-markdown-it
+markdown:
+  preset: 'default'
+  render:
+    html: true
+    xhtmlOut: true
+    breaks: true
+    langPrefix: 'language-'
+    linkify: true
+    typographer: true
+    quotes: '“”‘’'
+  plugins:
+    - 'markdown-it-footnote'
+    - 'markdown-it-ins'
+    - 'markdown-it-mark'
+    - 'markdown-it-sub'
+    - 'markdown-it-sup'
+  #   # 自定义插件
+    - 'markdown-it-checkbox'
+    - 'markdown-it-emoji'
+    - 'markdown-it-kbd'
+    # - 'markdown-it-imsize'
+    - 'markdown-it-named-headings'
+    - plugin:
+      name: markdown-it-imsize
+      options:
+        autofill: true
+    - plugin:
+      name: markdown-it-color-text
+      options:
+        classPrefix: 'md-colorify'
+        inlineStyle: true
+        customColor:
+          primary: '#409EFF'
+          success: '#67C23A'
+          info: '#909399'
+          warning: '#E6A23C'
+          error: '#F56C6C'
+    - plugin:
+      name: '@traptitech/markdown-it-katex'
+      options: # see https://katex.org/docs/options.html
+        # katex: 0.15.3
+        blockClass: "math-block"
+        strict: false
+        throwOnError: false
+        errorColor: "#cc0000"
+    - plugin:
+      name: markdown-it-multimd-table
+      enable: true
+      options:
+        multiline: true
+        rowspan: true
+        headerless: true
+  anchors:
+    # level: 2
+    # collisionSuffix: 'v'
+    permalink: false
+  #   permalinkClass: 'header-anchor'
+  #   permalinkSide: 'left'
+  #   permalinkSymbol: ''
+  #   case: 0
+  #   separator: '-'
+
 theme: next
 
 # Deployment
