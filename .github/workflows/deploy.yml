@@ -61,11 +61,13 @@ jobs:
 
       - name: Install dependencies
         run: |
+          npm install hexo-cli -g
           npm install
 
       - name: Deploy hexo
         run: |
-          npm run deploy
+          hexo clean
+          hexo deploy
 
   sync: #同步到gitee仓库
     needs: build
