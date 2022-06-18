@@ -186,5 +186,5 @@ theme: next
 deploy:
   type: git
   repo:
-      github: git@github.com:zglgithubx/zglgithubx.github.io.git
+    github: ssh://git@github.com:zglgithubx/zglgithubx.github.io.git
   branch: master
