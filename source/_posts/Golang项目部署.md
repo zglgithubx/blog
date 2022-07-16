@@ -5,6 +5,8 @@ categories: 运维
 tags: Golang
 ---
 
+此博客提供了三种方案，可以根据项目需求适当选择
+
 <!-- more -->
 
 ### 前言
@@ -46,7 +48,7 @@ WORKDIR /project/go
 COPY --from=builder /project/go ./
 //暴露的端口号
 EXPOSE 8888
-//容器运行时执行，
+//容器运行时执行，直接运行二进制文件，防止容器挂掉
 CMD ./server
 
 ```
