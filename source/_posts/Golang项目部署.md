@@ -1,8 +1,9 @@
 ---
 title: Golang项目部署
-date: 2022-07-16 18:12:13
 categories: 运维
 tags: Golang
+abbrlink: 36933
+date: 2022-07-16 18:12:13
 ---
 
 此博客提供了三种方案，可以根据项目需求适当选择
