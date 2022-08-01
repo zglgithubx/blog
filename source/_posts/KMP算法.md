@@ -5,7 +5,7 @@ cover: 'https://cdn.jsdelivr.net/gh/zglgithubx/picture/img/202110171224111.png'
 abbrlink: 35921
 date: 2021-10-16 11:27:33
 permalink:
-tags:
+tags: 算法
 ---
 
 ### 由来
