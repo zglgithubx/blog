@@ -1,0 +1,135 @@
+{
+  "main": {
+    "id": "5d39e85c05b35431",
+    "type": "split",
+    "children": [
+      {
+        "id": "e1cb3ba24c8ce05e",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "力扣健身_50之x的n次幂.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d728780e02e8e465",
+    "type": "split",
+    "children": [
+      {
+        "id": "d733e2ab9ae70c39",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "559138c7fca015fe",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "15e9cd55ebc9fbc2",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "11bc42b0eaabdb6d",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "2d306267ac0cf7f7",
+    "type": "split",
+    "children": [
+      {
+        "id": "ebdc2863beff4f85",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "dc6560eb6d499fbb",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "力扣健身_50之x的n次幂.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "2f112b3a798d091d",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "力扣健身_50之x的n次幂.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "6ba9ae5fbcd07d81",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "b48b418238a73e7a",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "力扣健身_50之x的n次幂.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "e1cb3ba24c8ce05e",
+  "lastOpenFiles": [
+    "力扣健身_56之合并区间.md"
+  ]
+}
