@@ -567,7 +567,7 @@ comments:
   style: tabs
   # Choose a comment system to be displayed by default.
   # Available values: disqus | disqusjs | changyan | livere | gitalk | utterances | waline
-  active:
+  active: valine
   # Setting `true` means remembering the comment system selected by the visitor.
   storage: true
   # Lazyload all comment systems.
@@ -645,23 +645,25 @@ utterances:
 # ---------------------------------------------------------------
 valine:
   # New! Whether enable this plugin
-  enable: false
-
+  enable: true
+  appid: l6shF1T2mcN4674rNpnTFTVr-gzGzoHsz
+  appkey: 9pVSS2d9x47KuvakXxninnPg
+  notify: true
+  verify: false
+  placeholder: 欢迎评论交流！
+  guest_info: nick,mail,link
+  visitor: true
+  recordIP: true
   dark: auto
-
   # Waline server address url, you should set this to your own link
   serverURL:
-
   # Waline library CDN url, you can set this to your preferred CDN
   # libUrl: //unpkg.com/@waline/client@v2/dist/waline.js
-
   # Waline CSS styles CDN url, you can set this to your preferred CDN
   cssUrl: https://unpkg.com/@waline/client@v2/dist/waline.css
-
   # Custom locales
   locale:
     placeholder: Welcome to comment # Comment box placeholder
-
   # Custom emoji
   emoji:
     - https://unpkg.com/@waline/emojis@1.0.1/weibo
@@ -670,7 +672,6 @@ valine:
     # - //unpkg.com/@waline/emojis@1.0.1/qq
     # - //unpkg.com/@waline/emojis@1.0.1/tieba
     # - //unpkg.com/@waline/emojis@1.0.1/tw-emoji
-
   # If false, comment count will only be displayed in post page, not in home page
   commentCount: true
 
@@ -696,7 +697,6 @@ valine:
 
   # Whether enable login, can choose from 'enable', 'disable' and 'force'
   login: disable
-
   # avater setting
   # Gravatar 官方的 www 源 https://www.gravatar.com/avatar/
   # Gravatar 官方的 cn 源 https://cn.gravatar.com/avatar/
@@ -708,7 +708,6 @@ valine:
   avatar: robohash
   # Set custom avatar cdn url
   avatarCDN: https://sdn.geekzu.org/avatar/
-
   # comment per page
   pageSize: 10
 
