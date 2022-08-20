@@ -47,9 +47,6 @@ highlight:
   tab_replace: ''
   wrap: true
   hljs: true
-
-
-
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)

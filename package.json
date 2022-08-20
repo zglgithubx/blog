@@ -12,9 +12,9 @@
     "version": "6.2.0"
   },
   "dependencies": {
-    "gitment": "0.0.3",
     "@traptitech/markdown-it-katex": "^3.5.0",
-    "@waline/hexo-next": "^3.0.0",
+    "@waline/hexo-next": "^3.0.1",
+    "gitment": "0.0.3",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.3.0",
     "gulp-html-minifier-terser": "^6.0.1",

@@ -567,7 +567,7 @@ comments:
   style: tabs
   # Choose a comment system to be displayed by default.
   # Available values: disqus | disqusjs | changyan | livere | gitalk | utterances | waline
-  active: valine
+  active: waline
   # Setting `true` means remembering the comment system selected by the visitor.
   storage: true
   # Lazyload all comment systems.
@@ -637,33 +637,26 @@ utterances:
   # Available values: github-light | github-dark | preferred-color-scheme | github-dark-orange | icy-dark | dark-blue | photon-dark | boxy-light
   theme: github-light
 
-# ---------------------------------------------------------------
-# Waline
-# For more information:
-# - https://waline.js.org
-# - https://waline.js.org/reference/component.html
-# ---------------------------------------------------------------
-valine:
+waline:
   # New! Whether enable this plugin
   enable: true
-  appid: l6shF1T2mcN4674rNpnTFTVr-gzGzoHsz
-  appkey: 9pVSS2d9x47KuvakXxninnPg
+  appId: KihdNEwx4Gdfs5pUeaeqP4R0-MdYXbMMI
+  appKey: XbOw6DbQtiKvsv0KfRK31sGD
   notify: true
   verify: false
-  placeholder: 欢迎评论交流！
-  guest_info: nick,mail,link
+  enableQQ: true # Whether to enable the Nickname box to automatically get QQ Nickname and QQ Avatar
+  requiredFields: [nick, mail] # Set required fields: [nick] | [nick, mail]
   visitor: true
   recordIP: true
-  dark: auto
   # Waline server address url, you should set this to your own link
-  serverURL:
+  serverURL: https://waline-ten-pi.vercel.app
   # Waline library CDN url, you can set this to your preferred CDN
-  # libUrl: //unpkg.com/@waline/client@v2/dist/waline.js
+  libUrl: https://unpkg.com/@waline/client@v2/dist/waline.js
   # Waline CSS styles CDN url, you can set this to your preferred CDN
   cssUrl: https://unpkg.com/@waline/client@v2/dist/waline.css
   # Custom locales
   locale:
-    placeholder: Welcome to comment # Comment box placeholder
+    placeholder: 欢迎评论交流！ # Comment box placeholder
   # Custom emoji
   emoji:
     - https://unpkg.com/@waline/emojis@1.0.1/weibo
@@ -673,11 +666,9 @@ valine:
     # - //unpkg.com/@waline/emojis@1.0.1/tieba
     # - //unpkg.com/@waline/emojis@1.0.1/tw-emoji
   # If false, comment count will only be displayed in post page, not in home page
-  commentCount: true
-
+  comment_count: true
   # Pageviews count, Note: You should not enable both `waline.pageview` and `leancloud_visitors`.
   pageview: true
-
   # Comment infomation, valid meta are nick, mail and link
   meta:
     - nick
@@ -691,12 +682,6 @@ valine:
 
   # Language, available values: en-US, zh-CN, zh-TW, pt-BR, ru-RU, jp-JP
   lang: zh-CN
-
-  # Word limit, no limit when setting to 0
-  # wordLimit: 0
-
-  # Whether enable login, can choose from 'enable', 'disable' and 'force'
-  login: disable
   # avater setting
   # Gravatar 官方的 www 源 https://www.gravatar.com/avatar/
   # Gravatar 官方的 cn 源 https://cn.gravatar.com/avatar/
@@ -790,14 +775,14 @@ clarity_analytics: #bqgaibizgv
 # You can visit https://www.leancloud.cn to get AppID and AppKey.
 leancloud_visitors:
   enable: false
-  app_id:
-  app_key:
+  app_id: l6shF1T2mcN4674rNpnTFTVr-gzGzoHsz
+  app_key: 9pVSS2d9x47KuvakXxninnPg
   # Required for apps from CN region
   server_url:
   # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
   # If you don't care about security in leancloud counter and just want to use it directly
   # (without hexo-leancloud-counter-security plugin), set `security` to `false`.
-  security: false
+  security: true
 
 # Another tool to show number of visitors to each article.
 # Visit https://console.firebase.google.com/u/0/ to get apiKey and projectId.
@@ -811,7 +796,7 @@ firestore:
 # Show Views / Visitors of the website / page with busuanzi.
 # For more information: http://ibruce.info/2015/04/04/busuanzi/
 busuanzi_count:
-  enable: true
+  enable: false
   total_visitors: true
   total_visitors_icon: fa fa-user
   total_views: true
@@ -853,7 +838,7 @@ local_search:
 # A button to open designated chat widget in sidebar.
 # Firstly, you need to enable and configure the chat service.
 chat:
-  enable: false
+  enable: true
   icon: fa fa-comment # Icon name in Font Awesome, set false to disable icon.
   text: Chat # Button text, change it as you wish.
 
