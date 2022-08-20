@@ -12,7 +12,7 @@
     "version": "6.2.0"
   },
   "dependencies": {
-    "@traptitech/markdown-it-katex": "^3.5.0",
+    "@traptitech/markdown-it-katex": "^3.6.0",
     "@waline/hexo-next": "^3.0.1",
     "gitment": "0.0.3",
     "gulp": "^4.0.2",
