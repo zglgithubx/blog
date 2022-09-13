@@ -144,7 +144,7 @@ sh go.sh start
 此自动化方案是基于阿里云效代码平台的流水线功能实现的，实现的效果：当有master分支有完成合并请求时执行（和其他的方案大同小异，思想可以借鉴）
 * 创建流水线选择模板
 
-![](https://fastly.jsdelivr.net/gh/zglgithubx/picture/img/202207161736015.png)
+![](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/202207161736015.png)
 
 * 测试步骤可以根据需要进行删改
 * 点击流水线源，编辑流水线源
