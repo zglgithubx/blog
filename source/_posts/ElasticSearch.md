@@ -3,7 +3,7 @@ title: ElasticSearch
 tags:
   - 大数据
 cover: >-
-  https://raw.githubusercontent.com/zglgithubx/picture/master/img/blog-thumbnail-generic-release.png
+  https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/blog-thumbnail-generic-release.png
 abbrlink: 22654
 date: 2022-04-03 18:33:29
 permalink:
@@ -28,11 +28,11 @@ Elasticsearch 是一个分布式、RESTful 风格的搜索和数据分析引擎�
 
 1998年9月4日，Google公司在美国硅谷成立。正如大家所知，它是一家做搜索引擎起家的公司。
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/75c99654de8d40f0934b31e7d811ad10.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/75c99654de8d40f0934b31e7d811ad10.png)
 
 无独有偶，一位名叫**Doug Cutting**的美国工程师，也迷上了搜索引擎。他做了一个用于文本搜索的函数库（姑且理解为软件的功能组件），命名为**Lucene**。
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/9acb284104e24e8c9129eabb2c641887.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/9acb284104e24e8c9129eabb2c641887.png)
 
 Lucene是用JAVA写成的，目标是为各种中小型应用软件加入全文检索功能。因为好用而且开源（代码公开），非常受程序员们的欢迎。
 
@@ -42,7 +42,7 @@ Lucene是用JAVA写成的，目标是为各种中小型应用软件加入全文�
 
 2004年，Doug Cutting再接再励，在Lucene的基础上，和Apache开源伙伴Mike Cafarella合作，开发了一款可以代替当时的主流搜索的开源搜索引擎，命名为**Nutch**。
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/78e9603f45ea412e8a7f34d04cbbe143.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/78e9603f45ea412e8a7f34d04cbbe143.png)
 
 Nutch是一个建立在Lucene核心之上的网页搜索应用程序，可以下载下来直接使用。它在Lucene的基础上加了网络爬虫和一些网页相关的功能，目的就是从一个简单的站内检索推广到全球网络的搜索上，就像Google一样。
 
@@ -54,7 +54,7 @@ Nutch在业界的影响力比Lucene更大。
 
 尤其是Google，作为互联网搜索引擎，需要存储大量的网页，并不断优化自己的搜索算法，提升搜索效率。
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/5d6a6fcb993e42c28b9c0731ec316754.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/5d6a6fcb993e42c28b9c0731ec316754.png)
 
 在这个过程中，Google确实找到了不少好办法，并且无私地分享了出来。开源！
 
@@ -64,7 +64,7 @@ Nutch在业界的影响力比Lucene更大。
 
 第二年，也就是2004年，Doug Cutting基于Google的GFS论文，实现了**分布式文件存储系统**，并将它命名为**NDFS（Nutch Distributed File System）**。
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/b4b2bec3cf7d4f5da174e6dcb4989e96.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/b4b2bec3cf7d4f5da174e6dcb4989e96.png)
 
 还是2004年，Google又发表了一篇技术学术论文，介绍自己的**MapReduce编程模型**。这个编程模型，用于大规模数据集（大于1TB）的并行分析运算。
 
@@ -74,7 +74,7 @@ Nutch在业界的影响力比Lucene更大。
 
 2006年，当时依然很厉害的**Yahoo（雅虎）公司**，招安了Doug Cutting。
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/09db6bd51dbc4f26b53976bcd4de8204.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/09db6bd51dbc4f26b53976bcd4de8204.png)
 
 这里要补充说明一下雅虎招安Doug的背景：2004年之前，作为互联网开拓者的雅虎，是使用Google搜索引擎作为自家搜索服务的。在2004年开始，雅虎放弃了Google，开始自己研发搜索引擎。所以。。。
 
@@ -83,7 +83,7 @@ Nutch在业界的影响力比Lucene更大。
 这个，就是后来大名鼎鼎的大数据框架系统——Hadoop的由来。而Doug Cutting，则被人们称为Hadoop之父。
 
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/e5604e49d5664c5c86dfb83f9aea7ee6.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/e5604e49d5664c5c86dfb83f9aea7ee6.png)
 
 Hadoop这个名字，实际上是Doug Cutting他儿子的黄色玩具大象的名字。所以，Hadoop的Logo，就是一只奔跑的黄色大象。
 
@@ -97,13 +97,13 @@ Hadoop这个名字，实际上是Doug Cutting他儿子的黄色玩具大象的
 
 Doug Cutting当然没有放过，在自己的hadoop系统里面，引入了BigTable，并命名为**HBase**。
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/6f813d03dca6447eaa987f841934e4e1.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/6f813d03dca6447eaa987f841934e4e1.png)
 
 好吧，反正就是紧跟Google时代步伐，你出什么，我学什么。
 
 所以，Hadoop的核心部分，基本上都有Google的影子。
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/9fca1eefc8b9472ea705582dd7093a7a.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/9fca1eefc8b9472ea705582dd7093a7a.png)
 
 2008年1月，Hadoop成功上位，正式成为Apache基金会的顶级项目。
 
@@ -226,11 +226,11 @@ Lucene是一个全文检索引擎的架构。那什么是全文搜索引擎?
 
 1. 当单纯的对已有数据进行搜索时，Solr更快
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/4ed7fbf84abc493a953c6aa904b22871.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/4ed7fbf84abc493a953c6aa904b22871.png)
 
 2. 当实时建立索引时，Solr会产生io阻塞，查询性能较差，ElasticSearch具有明显的优势
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/cd3535ed806a455690175d4f8448b70c.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/cd3535ed806a455690175d4f8448b70c.png)
 
 3. 随着数据量的增加，Solr的搜索效率会变得更低，而ElasticSearch却没有明显的变化
 
@@ -270,7 +270,7 @@ JDK8，最低要求
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/5ae25fde652d4503917683b50a1503f3.png)
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/f7b41243553a4d47b64c60f1df01e8ad.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/f7b41243553a4d47b64c60f1df01e8ad.png)
 
 下载地址：https://www.elastic.co/cn/downloads/elasticsearch
 
@@ -290,7 +290,7 @@ JDK8，最低要求
 
 1、解压即可（尽量将ElasticSearch相关工具放在统一目录下）
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/4f4c3861f146402bbd62b4639813ec76.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/4f4c3861f146402bbd62b4639813ec76.png)
 
 2、熟悉目录
 
@@ -315,7 +315,7 @@ plugins 插件目录 ik分词器
 
 > 注意：如果启动后闪退，可能是文件目录有中午或者空格造成的
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/be1942c768854ec39a36715383d4f6df.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/be1942c768854ec39a36715383d4f6df.png)
 
 访问 http://127.0.0.1:9200/
 
@@ -329,7 +329,7 @@ elasticsearch-head
 
 下载地址：https://github.com/mobz/elasticsearch-head
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/b976add50915495a883b201b99596d62.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/b976add50915495a883b201b99596d62.png)
 
 安装依赖 `npm install`
 
@@ -337,7 +337,7 @@ elasticsearch-head
 
 访问 http://localhost:9100/
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/c73b892a47304fb49ded0d7fa4e5513e.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/c73b892a47304fb49ded0d7fa4e5513e.png)
 
 发现存在跨域问题
 
@@ -360,7 +360,7 @@ http.cors.allow-origin: "*"
 
 创建一个索引
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/ce525553a4984849972493e776963f2f.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/ce525553a4984849972493e776963f2f.png)
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/666cb2e8ccfe49cfa6bf20b2c9a0f6b8.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA6b6Z5a6HXw==,size_20,color_FFFFFF,t_70,g_se,x_16)
 
@@ -411,7 +411,7 @@ Kibana是一个针对ElasticSearch的开源分析及可视化平台，用来搜�
 
 官网：https://www.elastic.co/cn/kibana/
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/b3a7d05d0bb4448e957947e4c856ca8d.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/b3a7d05d0bb4448e957947e4c856ca8d.png)
 
 
 
@@ -433,19 +433,19 @@ Kibana是一个针对ElasticSearch的开源分析及可视化平台，用来搜�
 
 进入到 kibana-7.14.0-windows-x86_64\bin 目录下，双击启动
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/0040a6fc2f7b43dca8d70b13ad32f6c7.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/0040a6fc2f7b43dca8d70b13ad32f6c7.png)
 
 
 
 访问 http://127.0.0.1:5601
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/bd1980a003184f44b3fa2b35395d9e13.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/bd1980a003184f44b3fa2b35395d9e13.png)
 
 开发工具
 
 （Postman、curl、head、谷歌浏览器插件）
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/702849eaab964d6c9c2c702610cf0815.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/702849eaab964d6c9c2c702610cf0815.png)
 
 如果说，你在英文方面不太擅长，kibana是支持汉化的
 
@@ -453,13 +453,13 @@ kibana汉化
 
 编辑器打开kibana解压目录/config/kibana.yml(kibana-7.13.1-windows-x86_64/config/kibana.yml)，添加
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/0393d4d0fc164dc59dcfdbd209354e30.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/0393d4d0fc164dc59dcfdbd209354e30.png)
 
 重启kibana
 
 汉化成功
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/784bbd78425d4dc78eab349eba69ee4d.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/784bbd78425d4dc78eab349eba69ee4d.png)
 
 
 
@@ -492,7 +492,7 @@ kibana汉化
 
 elasticsearch（集群）中可以包含多个索引（数据库） ，每个索引中可以包含多个类型（表） ，每个类型下又包含多个文档（行） ，每个文档中又包含多个字段（列）。
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/b4b6d49e705c431680358ecfdf601095.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/b4b6d49e705c431680358ecfdf601095.png)
 
 **物理设计：**
 
@@ -500,7 +500,7 @@ elasticsearch在后台把每个索引划分成多个分片。每个分片可以�
 
 一个人就是一个集群! ，即启动的ElasticSearch服务，默认就是一个集群，且默认集群名为elasticsearch
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/f97a6ef1187f4ec0a7a78822a25f9f66.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/f97a6ef1187f4ec0a7a78822a25f9f66.png)
 
 **逻辑设计：**
 
@@ -544,7 +544,7 @@ elasticsearch在后台把每个索引划分成多个分片。每个分片可以�
 
 一个集群至少有一 个节点，而一个节点就是一-个elasricsearch进程 ，节点可以有多个索引默认的，如果你创建索引，那么索引将会有个5个分片( primary shard ，又称主分片)构成的，每一个主分片会有-一个副本( replica shard ，又称复制分片）
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/ed34371596c344cbada49df3105a9edf.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/ed34371596c344cbada49df3105a9edf.png)
 
 上图是一个有3个节点的集群，可以看到主分片和对应的复制分片都不会在同-个节点内，这样有利于某个节点挂掉了，数据也不至于丢失。实际上， 一个分片是- -个Lucene索引， 一个包含==倒排索引==的文件目录，倒排索引的结构使得elasticsearch在不扫描全部文档的情况下，就能告诉你哪些文档包含特定的关键字。不过，等等，倒排索引是什么鬼?
 
@@ -586,7 +586,7 @@ To forever， study every day，good good up  # 文档2包含的内容
 
 再来看一个示例，比如我们通过博客标签来搜索博客文章。那么倒排索引列表就是这样的一个结构:
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/dd3138e456594fd29935bba97a751325.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/dd3138e456594fd29935bba97a751325.png)
 
 如果要搜索含有python标签的文章，那相对于查找所有原始数据而言，查找倒排索引后的数据将会快的多。只需要查看标签这一栏，然后获取相关的文章ID即可。完全过滤掉无关的所有数据，提高效率!
 
@@ -624,11 +624,11 @@ ik文件夹是自己创建的
 
 3、重启观察ES，发现ik插件被加载了
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/38b1d63421ab4382b3311fcb0d3895c0.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/38b1d63421ab4382b3311fcb0d3895c0.png)
 
 4、elasticsearch-plugin 可以通过这个命令来查看加载进来的插件
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/38f19cf2eab64372a275ffabc24f48c7.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/38f19cf2eab64372a275ffabc24f48c7.png)
 
 5、使用kibana测试
 
@@ -640,13 +640,13 @@ ik_smart：最少切分
 
 ik_max_word：最细粒度划分（穷尽词库的可能）
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/4d73848123e84b208b4e40816b571650.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/4d73848123e84b208b4e40816b571650.png)
 
 
 
 我们输入 超级喜欢狂神说java
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/38aea40d916f438790ab9ca400181243.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/38aea40d916f438790ab9ca400181243.png)
 
 发现问题：狂神说被拆开了！
 
@@ -666,13 +666,13 @@ elasticsearch目录/plugins/ik/config/IKAnalyzer.cfg.xml
 
 打开 IKAnalyzer.cfg.xml 文件，扩展字典
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/8a9feed75ad24bb78327a1330655659b.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/8a9feed75ad24bb78327a1330655659b.png)
 
 重启ElasticSearch，再次使用kibana测试
 
 **加载了自己的**
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/3715bb78330f447885bb4d18e72f7726.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/3715bb78330f447885bb4d18e72f7726.png)
 
 **测试kibana**
 
@@ -740,7 +740,7 @@ PUT /test1/type1/1
 
 完成了自动增加索引！数据也成功的添加了，这就是我说大家在初期可以把它当做数据库学习的原因！
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/a1662e1682294fe8931f6c8f4b687389.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/a1662e1682294fe8931f6c8f4b687389.png)
 
 
 
@@ -782,15 +782,15 @@ PUT /test1/type1/1
 
 可以通过 GET 请求获取具体的信息
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/9ce725800ca3465a8c34ffccd7d8bd2b.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/9ce725800ca3465a8c34ffccd7d8bd2b.png)
 
 5、查看默认信息
 
 `_doc` 默认类型（default type），type 在未来的版本中会逐渐弃用，因此产生一个默认类型进行代替
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/4da91cb2d5df42bebac4fcb58f8b99f4.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/4da91cb2d5df42bebac4fcb58f8b99f4.png)
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/19a9e6e92488420e83d34d77502d0472.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/19a9e6e92488420e83d34d77502d0472.png)
 
 如果自己的文档字段没有指定，那么es就会给我们默认配置字段类型！
 
@@ -798,7 +798,7 @@ PUT /test1/type1/1
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/981f1f82ba0244c8a063cca8ac0c5939.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA6b6Z5a6HXw==,size_20,color_FFFFFF,t_70,g_se,x_16)
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/c63b3977ea4c4f4999c6582f8c8aba04.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/c63b3977ea4c4f4999c6582f8c8aba04.png)
 
 6、修改
 
@@ -808,7 +808,7 @@ PUT /test1/type1/1
 
 版本+1（_version）
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/a51c87dd6df847a4a1f5d477ddecebc6.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/a51c87dd6df847a4a1f5d477ddecebc6.png)
 
 但是如果漏掉某个字段没有写，那么更新是没有写的字段 ，会消失
 
@@ -869,7 +869,7 @@ PUT /kuangshen/user/3
 
 2、获取数据 GET
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/0e50324e7c9d4073befc3e9c5b839f60.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/0e50324e7c9d4073befc3e9c5b839f60.png)
 
 3、更新数据 PUT
 
@@ -883,11 +883,11 @@ PUT /kuangshen/user/3
 }
 ```
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/e5007de387844be5bfce42147f181e11.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/e5007de387844be5bfce42147f181e11.png)
 
 4、Post  _update，推荐使用这种更新方式！
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/9e051316013f400891b1ffd5d4473408.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/9e051316013f400891b1ffd5d4473408.png)
 
 
 
@@ -907,7 +907,7 @@ GET kuangshen/user/1
 
 复杂操作搜索 select（排序，分页，高亮，模糊查询，精准查询）
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/a20e749f1863490d89cd3746c954a9de.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/a20e749f1863490d89cd3746c954a9de.png)
 
 ```json
 //测试只能一个字段查询
@@ -923,7 +923,7 @@ GET lisen/user/_search
 
 输出结果，不想要那么多，只展示列表中某些字段
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/b7907b445a9a47598675e271890f7263.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/b7907b445a9a47598675e271890f7263.png)
 
 我们之后使用java操作es，所有的方法和对象就是这里面的key
 
@@ -935,7 +935,7 @@ GET lisen/user/_search
 
 **分页**
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/0ffa8f13a2d04d1c874e4cdf42b1168f.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/0ffa8f13a2d04d1c874e4cdf42b1168f.png)
 
 数据下标还是从0开始的，和学的所有数据结构是一样的！
 
@@ -947,7 +947,7 @@ GET lisen/user/_search
 
 must（and），所有的条件都要符合 where id=1 and name = xxx
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/3589fc9a7b7b48c79c8493997be7adbe.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/3589fc9a7b7b48c79c8493997be7adbe.png)
 
 should（or），所有的条件都要符合  where id=1 or name = xxx
 
@@ -955,7 +955,7 @@ should（or），所有的条件都要符合  where id=1 or name = xxx
 
 must_not（not）
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/4ac6b16f0a7d4b2687e35c2f7cc03fad.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/4ac6b16f0a7d4b2687e35c2f7cc03fad.png)
 
 **过滤器 filter**
 
@@ -966,11 +966,11 @@ must_not（not）
 - lte 小于
 - lte 小于等于
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/e8bc04cc80a94c1589c21d522fdcae76.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/e8bc04cc80a94c1589c21d522fdcae76.png)
 
 **匹配多个条件（数组）**
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/5c36c5aa99f64a5f86839e2982870c30.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/5c36c5aa99f64a5f86839e2982870c30.png)
 
 **精确查询**
 
@@ -989,19 +989,19 @@ term查询是直接通过倒排索引指定的词条进程精确查找的
 
 
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/3de24b19e77441c39c6b2eaf1df58f6f.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/3de24b19e77441c39c6b2eaf1df58f6f.png)
 
 **多个值匹配精确查询**
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/f5fc6c7a9b794c829fa48d56bfd81f96.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/f5fc6c7a9b794c829fa48d56bfd81f96.png)
 
 **高亮**
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/6bbe3eee045a44b9ab52097aedd27964.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/6bbe3eee045a44b9ab52097aedd27964.png)
 
 还能自定义高亮的样式
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/1b8f05ec014343a2b6e85a0564dbe4b5.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/1b8f05ec014343a2b6e85a0564dbe4b5.png)
 
 
 
@@ -1051,7 +1051,7 @@ term查询是直接通过倒排索引指定的词条进程精确查找的
 
 ### 6.2、找对象
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/e3d293ae07494d09a4cec0c2fe18e7db.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/e3d293ae07494d09a4cec0c2fe18e7db.png)
 
 ### 6.3、分析这个类中的方法
 
@@ -1081,7 +1081,7 @@ public class ElasticSearchClientConfig {
 }
 ```
 
-![在这里插入图片描述](https://raw.githubusercontent.com/zglgithubx/picture/master/img/5ffde15a8f0a4ca0a59a72508654579b.png)
+![在这里插入图片描述](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/5ffde15a8f0a4ca0a59a72508654579b.png)
 
 虽然这里导入了3个类，都是静态内部类，核心类就一个
 

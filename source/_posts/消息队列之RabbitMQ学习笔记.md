@@ -39,13 +39,13 @@ RabbitMQ 是一个开源的 AMQP 实现，服务器端用Erlang语言编写，�
 
 ERlang[官网](https://www.erlang.org/downloads?spm=a2c6h.12873639.0.0.433733dfToixYZ)下载window版安装包
 
-![img](https://raw.githubusercontent.com/zglgithubx/picture/master/img/202111071152710.png)
+![img](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/202111071152710.png)
 
 安装中，一直点next，完成后配置环境变量
 
-![img](https://raw.githubusercontent.com/zglgithubx/picture/master/img/202111071153051.png)
+![img](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/202111071153051.png)
 
-![img](https://raw.githubusercontent.com/zglgithubx/picture/master/img/202111071154226.png)
+![img](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/202111071154226.png)
 
 完成后，打开cmd,输入验证是否成功
 
@@ -57,11 +57,11 @@ erl -version
 
 在RabbitMQ的[GitHub项目](https://github.com/rabbitmq/rabbitmq-server/releases/tag/v3.7.3?spm=a2c6h.12873639.0.0.433733dfvzkoi7&file=v3.7.3)中，下载window版本的服务端安装包
 
-![img](https://raw.githubusercontent.com/zglgithubx/picture/master/img/202111071157091.png)
+![img](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/202111071157091.png)
 
 安装后，找到安装目录：
 
-![img](https://raw.githubusercontent.com/zglgithubx/picture/master/img/202111071158360.png)
+![img](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/202111071158360.png)
 
 在此目录打开cmd命令，输入：
 
@@ -72,7 +72,7 @@ rabbitmq-plugins enable rabbitmq_management
 
 在此目录下双击rabbitmq-server.bat启动脚本，然后打开服务管理可以看到RabbitMQ正在运行：
 
-![img](https://raw.githubusercontent.com/zglgithubx/picture/master/img/202111071200331.png)
+![img](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/202111071200331.png)
 
 最后在浏览器输入:
 
@@ -92,7 +92,7 @@ http://localhost:15672
 
 这些部分协同工作图：
 
-![img](https://raw.githubusercontent.com/zglgithubx/picture/master/img/202111071208178.png)
+![img](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/202111071208178.png)
 
 - 消息生产者连接到RabbitMQ Broker，创建connection，开启channel。
 - 生产者声明交换机类型、名称、是否持久化等。

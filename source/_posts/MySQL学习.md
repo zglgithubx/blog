@@ -60,7 +60,7 @@ tags: MySQL
 show charset like 'utf8%';
 ```
 
-![image-20220511172235587](https://raw.githubusercontent.com/zglgithubx/picture/master/img/image-20220511172235587.png)
+![image-20220511172235587](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/image-20220511172235587.png)
 
 Charset:字符集名称
 Default_collation:默认的比较规则
@@ -72,7 +72,7 @@ Maxlen:最大长度,utf8字符长度为1-3所以MaxLen为3 utf8mb4字符长度1-
 show collation like 'utf8%';
 ```
 
-![image-20220511172428267](https://raw.githubusercontent.com/zglgithubx/picture/master/img/image-20220511172428267.png)
+![image-20220511172428267](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/image-20220511172428267.png)
 
 Default:是否是当前字符集默认的比较规则
 Complied:是否将字符集编译到了server中
@@ -139,8 +139,8 @@ id int [character set 字符集名称] [collate 比较规则名称]
 
 **mysql通信中的字符集与比较规则**
 
-![image-20220511173659500](https://raw.githubusercontent.com/zglgithubx/picture/master/img/image-20220511173659500.png)
-![image-20220511173739019](https://raw.githubusercontent.com/zglgithubx/picture/master/img/image-20220511173739019.png)
+![image-20220511173659500](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/image-20220511173659500.png)
+![image-20220511173739019](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/image-20220511173739019.png)
 
 **character_set_client(服务端收到请求)**
 
@@ -175,7 +175,7 @@ id int [character set 字符集名称] [collate 比较规则名称]
 
 在早期的InnoDB版本中，由于文件格式只有一种，因此不需要为此文件格式命名。随着InnoDB引擎的发展，开发出了不兼容早期版本的新文件格式，用于支持新的功能。为了在升级和降级情况下帮助管理系统的兼容性，以及运行不同的MySQL版本，InnoDB开始使用命名的文件格式。
 
-![MySQL怎么从二进制内容看InnoDB行格式](https://raw.githubusercontent.com/zglgithubx/picture/master/img/b2caf96f361aa29ff2cd1bb511c638a0.png)
+![MySQL怎么从二进制内容看InnoDB行格式](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/b2caf96f361aa29ff2cd1bb511c638a0.png)
 
 在msyql 5.7.9及以后版本，默认行格式由innodb_default_row_format变量决定，它的默认值是dynamic
 
@@ -183,7 +183,7 @@ id int [character set 字符集名称] [collate 比较规则名称]
 
 ##### COMPACT
 
-![MySQL怎么从二进制内容看InnoDB行格式](https://raw.githubusercontent.com/zglgithubx/picture/master/img/b93590226e885d956bfd5a96887c3fd7.png)
+![MySQL怎么从二进制内容看InnoDB行格式](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/b93590226e885d956bfd5a96887c3fd7.png)
 
 **变长字段列表**
 
@@ -284,17 +284,17 @@ mysql> show status like 'innodb_page_size';
 
 InnoDB 数据页的结构如图所示：
 
-![img](https://raw.githubusercontent.com/zglgithubx/picture/master/img/v2-c5c9a86badc7f63ef4aa8cbf737e18cb_720w.jpg)
+![img](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/v2-c5c9a86badc7f63ef4aa8cbf737e18cb_720w.jpg)
 
 它由七部分构成，简介如下：
 
-![img](https://raw.githubusercontent.com/zglgithubx/picture/master/img/v2-62671ca47bbd785000cd4fbdfd5b52e8_720w.jpg)
+![img](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/v2-62671ca47bbd785000cd4fbdfd5b52e8_720w.jpg)
 
 ##### **记录插入过程**
 
 在数据页中，当记录为空时，User Records 是不存在的。随着记录的一条条插入，会不断从 Free Space 开辟空间分配给记录，如图所示：
 
-![img](https://raw.githubusercontent.com/zglgithubx/picture/master/img/v2-f0e154fa8e3f1b18d9d7650223735763_720w.jpg)
+![img](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/v2-f0e154fa8e3f1b18d9d7650223735763_720w.jpg)
 
 ##### **页结构分析**
 
@@ -335,7 +335,7 @@ PS: 由于这两条记录不是我们自定义的，因此不存储在 User Reco
 
 这时候 next_record 的作用就体现出来了。这两条记录和我们自定义的记录之间是通过 next_record 关联起来的，自定义的记录之间也是通过 next_record 关联起来的，如图所示：
 
-![img](https://raw.githubusercontent.com/zglgithubx/picture/master/img/v2-4ab3fd1b95109efb9b32f838e3570b26_720w.jpg)
+![img](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/v2-4ab3fd1b95109efb9b32f838e3570b26_720w.jpg)
 
 即，「最小记录」的 next_record 指向第一条数据记录，最后一条数据记录的 next_record 指向「最大记录」。数据记录之间是按照主键的顺序从小到大排序的。
 
@@ -352,7 +352,7 @@ PS: 此处的 (1,100,'aaaa'), (2,200,'bbbb') 等几条内容是自定义的数�
 
 由于记录之间是按主键排序的，可以把它们从小到大分成一个个的「组」，每组包含很少的几条记录，如图所示：
 
-![img](https://raw.githubusercontent.com/zglgithubx/picture/master/img/v2-5c5f873aa349954a66f580866d184b40_720w.jpg)
+![img](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/v2-5c5f873aa349954a66f580866d184b40_720w.jpg)
 
 分组规则大致如下：
 
@@ -384,7 +384,7 @@ PS: 此处的 (1,100,'aaaa'), (2,200,'bbbb') 等几条内容是自定义的数�
 
 既然有上一页、下一页的定义，说明页与页之间其实是互相连接的，它们之间就像一个双向链表（比如 Java 的 LinkedList）那样，如图所示：
 
-![img](https://raw.githubusercontent.com/zglgithubx/picture/master/img/v2-983d6442b506e0c37e397115158071c6_720w.jpg)
+![img](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/v2-983d6442b506e0c37e397115158071c6_720w.jpg)
 
 
 
