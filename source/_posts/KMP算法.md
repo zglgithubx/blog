@@ -1,7 +1,7 @@
 ---
 title: KMP算法
 categories: 数据结构
-cover: 'https://cdn.jsdelivr.net/gh/zglgithubx/picture/img/202110171224111.png'
+cover: 'https://raw.githubusercontent.com/zglgithubx/picture/master/img/202110171224111.png'
 abbrlink: 35921
 date: 2021-10-16 11:27:33
 permalink:
@@ -32,11 +32,11 @@ KMP算法匹配的过程：
 
 ②当遇到不匹配的时候，如下图
 
-![image-20211017101822955](https://cdn.jsdelivr.net/gh/zglgithubx/picture/img/202110171018117.png)
+![image-20211017101822955](https://raw.githubusercontent.com/zglgithubx/picture/master/img/202110171018117.png)
 
 模式串会从b的位置开始匹配，文本串匹配的位置不变
 
-![image-20211017110657407](https://cdn.jsdelivr.net/gh/zglgithubx/picture/img/202110171106451.png)
+![image-20211017110657407](https://raw.githubusercontent.com/zglgithubx/picture/master/img/202110171106451.png)
 
 到这里，肯定会有疑问：会什么从b开始？
 
@@ -82,31 +82,31 @@ KMP算法匹配的过程：
 
 ①开始匹配
 
-![img](https://cdn.jsdelivr.net/gh/zglgithubx/picture/img/202110171151156.png)
+![img](https://raw.githubusercontent.com/zglgithubx/picture/master/img/202110171151156.png)
 
 ② 因为模式串中的字符A跟文本串中的字符B、B、C、空格一开始就不匹配，所以不必考虑结论，直接将模式串不断的右移一位即可，直到模式串中的字符A跟文本串的第5个字符A匹配成功：
 
-![img](https://cdn.jsdelivr.net/gh/zglgithubx/picture/img/202110171151451.png)
+![img](https://raw.githubusercontent.com/zglgithubx/picture/master/img/202110171151451.png)
 
 ③继续往后匹配，当模式串最后一个字符D跟文本串匹配时失配，显而易见，模式串需要向右移动。但向右移动多少位呢？因为此时已经匹配的字符数为6个（ABCDAB），然后根据《前缀表》可得失配字符D的上一位字符B对应的长度值为2，所以根据之前的结论，可知需要向右移动6 - 2 = 4 位。
 
-![img](https://cdn.jsdelivr.net/gh/zglgithubx/picture/img/202110171152957.png)
+![img](https://raw.githubusercontent.com/zglgithubx/picture/master/img/202110171152957.png)
 
 ④模式串向右移动4位后，发现C处再度失配，因为此时已经匹配了2个字符（AB），且上一位字符B对应的最大长度值为0，所以向右移动：2 - 0 =2 位。
 
-![img](https://cdn.jsdelivr.net/gh/zglgithubx/picture/img/202110171153610.png)
+![img](https://raw.githubusercontent.com/zglgithubx/picture/master/img/202110171153610.png)
 
 ⑤A与空格不匹配，向右移动1位
 
-![img](https://cdn.jsdelivr.net/gh/zglgithubx/picture/img/202110171154064.png)
+![img](https://raw.githubusercontent.com/zglgithubx/picture/master/img/202110171154064.png)
 
 ⑥继续比较，发现D与C 失配，故向右移动的位数为：已匹配的字符数6减去上一位字符B对应的最大长度2，即向右移动6 - 2 = 4 位。
 
-![img](https://cdn.jsdelivr.net/gh/zglgithubx/picture/img/202110171154305.png)
+![img](https://raw.githubusercontent.com/zglgithubx/picture/master/img/202110171154305.png)
 
 ⑦经历第5步后，发现匹配成功，过程结束。
 
-![img](https://cdn.jsdelivr.net/gh/zglgithubx/picture/img/202110171155335.png)
+![img](https://raw.githubusercontent.com/zglgithubx/picture/master/img/202110171155335.png)
 
 至此这就是KMP算法的大致原理。
 
