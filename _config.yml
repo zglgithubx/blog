@@ -1,10 +1,10 @@
-title: 'NoBug'
-subtitle: 'no bug'
-description: '01001010101010101010010010010101011101010101010'
-keywords: 'no bug'
+title: "NoBug"
+subtitle: "no bug"
+description: "01001010101010101010010010010101011101010101010"
+keywords: "no bug"
 author: ZhuGuangLiang
 language: zh-CN
-timezone: 'Asia/Shanghai'
+timezone: "Asia/Shanghai"
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
@@ -21,10 +21,9 @@ public_dir: public
 tag_dir: tags
 archive_dir: archives
 category_dir: categories
-code_dir: downloads/code
+code_dir: code
 i18n_dir: :lang
 skip_render:
-
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -33,7 +32,7 @@ titlecase: false # Transform title into titlecase
 external_link:
   enable: true # Open external links in new tab
   field: site # Apply to the whole site
-  exclude: ''
+  exclude: ""
 filename_case: 0
 render_drafts: false
 post_asset_folder: false
@@ -44,7 +43,7 @@ highlight:
   enable: true
   line_number: true
   auto_detect: true
-  tab_replace: ''
+  tab_replace: ""
   wrap: true
   hljs: true
 # Home page setting
@@ -52,7 +51,7 @@ highlight:
 # per_page: Posts displayed per page. (0 = disable pagination)
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
-  path: ''
+  path: ""
   per_page: 10
   order_by: -date
 
@@ -72,7 +71,7 @@ meta_generator: true
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
 ## updated_option supports 'mtime', 'date', 'empty'
-updated_option: 'mtime'
+updated_option: "mtime"
 
 # Pagination
 ## Set per_page to 0 to disable pagination
@@ -103,39 +102,39 @@ search:
   content: true
   format: html
   limit: 1000
-
-
+exclude:
+#  - "code/*"
 lazyload:
   enable: true
   imgContainer: true
   post:
-     only: true
-     excludeEncrypt: true
+    only: true
+    excludeEncrypt: true
   loadingImg: # eg /images/loading.gif
 
 # hexo-renderer-markdown-it
 markdown:
-  preset: 'default'
+  preset: "default"
   render:
     html: true
     xhtmlOut: true
     breaks: true
-    langPrefix: 'language-'
+    langPrefix: "language-"
     linkify: true
     typographer: true
-    quotes: '“”‘’'
+    quotes: "“”‘’"
   plugins:
-    - 'markdown-it-footnote'
-    - 'markdown-it-ins'
-    - 'markdown-it-mark'
-    - 'markdown-it-sub'
-    - 'markdown-it-sup'
-  #   # 自定义插件
-    - 'markdown-it-checkbox'
-    - 'markdown-it-emoji'
-    - 'markdown-it-kbd'
+    - "markdown-it-footnote"
+    - "markdown-it-ins"
+    - "markdown-it-mark"
+    - "markdown-it-sub"
+    - "markdown-it-sup"
+    #   # 自定义插件
+    - "markdown-it-checkbox"
+    - "markdown-it-emoji"
+    - "markdown-it-kbd"
     # - 'markdown-it-imsize'
-    - 'markdown-it-named-headings'
+    - "markdown-it-named-headings"
     - plugin:
       name: markdown-it-imsize
       options:
@@ -143,16 +142,16 @@ markdown:
     - plugin:
       name: markdown-it-color-text
       options:
-        classPrefix: 'md-colorify'
+        classPrefix: "md-colorify"
         inlineStyle: true
         customColor:
-          primary: '#409EFF'
-          success: '#67C23A'
-          info: '#909399'
-          warning: '#E6A23C'
-          error: '#F56C6C'
+          primary: "#409EFF"
+          success: "#67C23A"
+          info: "#909399"
+          warning: "#E6A23C"
+          error: "#F56C6C"
     - plugin:
-      name: '@traptitech/markdown-it-katex'
+      name: "@traptitech/markdown-it-katex"
       options: # see https://katex.org/docs/options.html
         # katex: 0.15.3
         blockClass: "math-block"
