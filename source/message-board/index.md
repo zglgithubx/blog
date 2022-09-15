@@ -13,9 +13,9 @@ date: 2022-05-01 04:22:27
     <p id="poem">在我的后园，可以看见墙外有两株树，一株是枣树，还有一株也是枣树。</p>
     <p id="info">鲁迅</p>
 </div>
-<!-- <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script> -->
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 
-<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js" >
+<script type="text/javascript">
     $.get("https://v1.hitokoto.cn?c=d&c=h&c=j", function (data) {
             if (data.id > 0) {
                 $('#poem').html(data.hitokoto)
