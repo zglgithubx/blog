@@ -62,46 +62,46 @@ protobuf 是 Google 公司内部的混合语言数据标准，默认情况下，
 
 * 在后缀为.proto文件中定义数据结构（被远程调用服务的接口文档）
 
-  * ```
-    //使用的版本号
-    syntax = "proto3";
-    option go_package = "../proto;client";
-    option java_multiple_files = true;
-    option java_package="com.example.grpcexample.helloworld";
-    //请求
-    message Request {
-        double num1 = 1;
-        double num2 = 2;
-        OperateType opType = 3;
-    }
-    //枚举类
-    enum OperateType {
-        Addition = 0;
-        Division = 1;
-        Multiplication = 2;
-        Subtraction = 3;
-    }
-    //响应
-    message Response {
-        double result = 1;
-    }
-    
-    //定义服务
-    service Operate {
-    	//一元RPC
-        rpc Calculate (Request) returns (Response);
-        
-        //服务器流式 RPC
-        rpc Calculate (Request) returns (stream Response);
-        
-        //客户端流式RPC
-        rpc Calculate (stream Request) returns (Response);
-        
-        //双向流式RPC
-        rpc Calculate (stream Request) returns (Response);
-        
-    }
-    ```
+  ```
+  //使用的版本号
+  syntax = "proto3";
+  option go_package = "../proto;client";
+  option java_multiple_files = true;
+  option java_package="com.example.grpcexample.helloworld";
+  //请求
+  message Request {
+      double num1 = 1;
+      double num2 = 2;
+      OperateType opType = 3;
+  }
+  //枚举类
+  enum OperateType {
+      Addition = 0;
+      Division = 1;
+      Multiplication = 2;
+      Subtraction = 3;
+  }
+  //响应
+  message Response {
+      double result = 1;
+  }
+  
+  //定义服务
+  service Operate {
+  	//一元RPC
+      rpc Calculate (Request) returns (Response);
+      
+      //服务器流式 RPC
+      rpc Calculate (Request) returns (stream Response);
+      
+      //客户端流式RPC
+      rpc Calculate (stream Request) returns (Response);
+      
+      //双向流式RPC
+      rpc Calculate (stream Request) returns (Response);
+      
+  }
+  ```
 
   * 四种服务类型介绍(消息传输)
 
@@ -205,37 +205,39 @@ service HelloWorld {
 
 * 配置maven
 
-  * ```xml
-    <!--    GRPC    -->
-    <dependency>
-        <groupId>net.devh</groupId>
-        <artifactId>grpc-server-spring-boot-starter</artifactId>
-        <version>2.13.1.RELEASE</version>
-    </dependency>
-    <!--    插件    -->
-    <plugin>
-        <groupId>org.xolstice.maven.plugins</groupId>
-        <artifactId>protobuf-maven-plugin</artifactId>
-        <version>0.5.1</version>
-        <configuration>
-            <protocArtifact>com.google.protobuf:protoc:3.7.1:exe:${os.detected.classifier}</protocArtifact>
-            <pluginId>grpc-java</pluginId>
-            <pluginArtifact>io.grpc:protoc-gen-grpc-java:1.20.0:exe:${os.detected.classifier}</pluginArtifact>
-            <outputDirectory>${project.build.sourceDirectory}</outputDirectory>
-            <!--设置是否在生成java文件之前清空outputDirectory的文件，默认值为true，设置为false时也会覆盖同名文件-->
-            <clearOutputDirectory>false</clearOutputDirectory>
-            <!--更多配置信息可以查看https://www.xolstice.org/protobuf-maven-plugin/compile-mojo.html-->
-        </configuration>
-        <executions>
-            <execution>
-                <goals>
-                    <goal>compile</goal>
-                    <goal>compile-custom</goal>
-                </goals>
-            </execution>
-        </executions>
-    </plugin>
-    ```
+  ```
+  <!--    GRPC    -->
+  <dependency>
+      <groupId>net.devh</groupId>
+      <artifactId>grpc-server-spring-boot-starter</artifactId>
+      <version>2.13.1.RELEASE</version>
+  </dependency>
+  <!--    插件    -->
+  <plugin>
+      <groupId>org.xolstice.maven.plugins</groupId>
+      <artifactId>protobuf-maven-plugin</artifactId>
+      <version>0.5.1</version>
+      <configuration>
+          <protocArtifact>com.google.protobuf:protoc:3.7.1:exe:${os.detected.classifier}</protocArtifact>
+          <pluginId>grpc-java</pluginId>
+          <pluginArtifact>io.grpc:protoc-gen-grpc-java:1.20.0:exe:${os.detected.classifier}</pluginArtifact>
+          <outputDirectory>${project.build.sourceDirectory}</outputDirectory>
+          <!--设置是否在生成java文件之前清空outputDirectory的文件，默认值为true，设置为false时也会覆盖同名文件-->
+          <clearOutputDirectory>false</clearOutputDirectory>
+          <!--更多配置信息可以查看https://www.xolstice.org/protobuf-maven-plugin/compile-mojo.html-->
+      </configuration>
+      <executions>
+          <execution>
+              <goals>
+                  <goal>compile</goal>
+                  <goal>compile-custom</goal>
+              </goals>
+          </execution>
+      </executions>
+  </plugin>
+  ```
+
+  
 
 * 在java的同级目录创建proto文件夹，并将其标记为Sources Root
 
@@ -401,18 +403,19 @@ message 参数名称{
 
 * Any类型，类似于Java的Object
 
-  * ```
-    如果使用any类型，需要导入：google/protobuf/any.proto
-    
-    import "google/protobuf/any.proto";
-    
-    message Response {
-    	string msg = 1;
-    	int32 code = 2;
-    	google.protobuf.Any data = 3; //可以理解成Object
-    	repeated google.protobuf.Any datas = 4; //可以理解成泛型 List<T> datas;
-    }
-    ```
+  ```
+  如果使用any类型，需要导入：google/protobuf/any.proto
+  
+  import "google/protobuf/any.proto";
+  
+  message Response {
+  	string msg = 1;
+  	int32 code = 2;
+  	google.protobuf.Any data = 3; //可以理解成Object
+  	repeated google.protobuf.Any datas = 4; //可以理解成泛型 List<T> datas;
+  }
+  ```
+  
 
 标签：
 
@@ -464,8 +467,6 @@ service 服务名 {
  rpc 方法名(stream 请求消息) returns (stream 响应消息);
 }
 ```
-
-
 
 ### 五、讨论
 
