@@ -55,7 +55,7 @@ favicon:
   #android_manifest: /manifest.json
 
 # Custom Logo (Warning: Do not support scheme Mist)
-custom_logo: /img/logo.gif
+custom_logo: 
 
 # Creative Commons 4.0 International License.
 # See: https://creativecommons.org/about/cclicenses/
