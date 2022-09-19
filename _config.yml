@@ -9,7 +9,7 @@ timezone: "Asia/Shanghai"
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://zglgithubx.github.io
-permalink: posts/:abbrlink.html
+permalink: /:abbrlink
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -102,8 +102,6 @@ search:
   content: true
   format: html
   limit: 1000
-exclude:
-#  - "code/*"
 lazyload:
   enable: true
   imgContainer: true
@@ -113,67 +111,67 @@ lazyload:
   loadingImg: # eg /images/loading.gif
 
 # hexo-renderer-markdown-it
-markdown:
-  preset: "default"
-  render:
-    html: true
-    xhtmlOut: true
-    breaks: true
-    langPrefix: "language-"
-    linkify: true
-    typographer: true
-    quotes: "“”‘’"
-  plugins:
-    - "markdown-it-footnote"
-    - "markdown-it-ins"
-    - "markdown-it-mark"
-    - "markdown-it-sub"
-    - "markdown-it-sup"
-    #   # 自定义插件
-    - "markdown-it-checkbox"
-    - "markdown-it-emoji"
-    - "markdown-it-kbd"
-    # - 'markdown-it-imsize'
-    - "markdown-it-named-headings"
-    - plugin:
-      name: markdown-it-imsize
-      options:
-        autofill: true
-    - plugin:
-      name: markdown-it-color-text
-      options:
-        classPrefix: "md-colorify"
-        inlineStyle: true
-        customColor:
-          primary: "#409EFF"
-          success: "#67C23A"
-          info: "#909399"
-          warning: "#E6A23C"
-          error: "#F56C6C"
-    - plugin:
-      name: "@traptitech/markdown-it-katex"
-      options: # see https://katex.org/docs/options.html
-        # katex: 0.15.3
-        blockClass: "math-block"
-        strict: false
-        throwOnError: false
-        errorColor: "#cc0000"
-    - plugin:
-      name: markdown-it-multimd-table
-      enable: true
-      options:
-        multiline: true
-        rowspan: true
-        headerless: true
-  anchors:
-    # level: 2
-    # collisionSuffix: 'v'
-    permalink: false
-  #   permalinkClass: 'header-anchor'
-  #   permalinkSide: 'left'
-  #   permalinkSymbol: ''
-  #   case: 0
-  #   separator: '-'
+# markdown:
+#   preset: "default"
+#   render:
+#     html: true
+#     xhtmlOut: true
+#     breaks: true
+#     langPrefix: "language-"
+#     linkify: true
+#     typographer: true
+#     quotes: "“”‘’"
+#   plugins:
+#     - "markdown-it-footnote"
+#     - "markdown-it-ins"
+#     - "markdown-it-mark"
+#     - "markdown-it-sub"
+#     - "markdown-it-sup"
+#     #   # 自定义插件
+#     - "markdown-it-checkbox"
+#     - "markdown-it-emoji"
+#     - "markdown-it-kbd"
+#     # - 'markdown-it-imsize'
+#     - "markdown-it-named-headings"
+#     - plugin:
+#       name: markdown-it-imsize
+#       options:
+#         autofill: true
+#     - plugin:
+#       name: markdown-it-color-text
+#       options:
+#         classPrefix: "md-colorify"
+#         inlineStyle: true
+#         customColor:
+#           primary: "#409EFF"
+#           success: "#67C23A"
+#           info: "#909399"
+#           warning: "#E6A23C"
+#           error: "#F56C6C"
+#     - plugin:
+#       name: "@traptitech/markdown-it-katex"
+#       options: # see https://katex.org/docs/options.html
+#         # katex: 0.15.3
+#         blockClass: "math-block"
+#         strict: false
+#         throwOnError: false
+#         errorColor: "#cc0000"
+#     - plugin:
+#       name: markdown-it-multimd-table
+#       enable: true
+#       options:
+#         multiline: true
+#         rowspan: true
+#         headerless: true
+#   anchors:
+#     # level: 2
+#     # collisionSuffix: 'v'
+#     permalink: false
+#   permalinkClass: 'header-anchor'
+#   permalinkSide: 'left'
+#   permalinkSymbol: ''
+#   case: 0
+#   separator: '-'
 
 theme: next
 
