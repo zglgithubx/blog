@@ -315,8 +315,6 @@ io.github.zglgithubx.apinotice.NoticeAutoConfiguration
 
 回车后，会让你输入两次密码，然后ok，就会生成密钥。
 
-[发布项目到Maven中央仓库的最佳实践 - 简书 (jianshu.com)](https://www.jianshu.com/p/5f6135e1925f)
-
 #### 3.6、把key发送到中央仓库服务器，后面在上传时会做验证
 
 首先找到key，在安装的gpg客户端中找到密钥id，密钥id就是接下来需要发送的key
