@@ -252,7 +252,7 @@ io.github.zglgithubx.apinotice.NoticeAutoConfiguration
 <dependency>
 <groupId>io.github.zglgithubx</groupId>
 <artifactId>apinotice-spring-boot-starter</artifactId>
-<version>0.0.2-RELEASE</version>
+<version>0.0.1-RELEASE</version>
 </dependency>
 ```
 
@@ -260,6 +260,230 @@ io.github.zglgithubx.apinotice.NoticeAutoConfiguration
 
 #### 3.1、首先将项目推送到github仓库
 
-#### 3.2、这里推荐以下博客进行
+在项目的pom.xml添加依赖：
+
+```
+ <url>https://github.com/zglgithubx/apinotice-spring-boot-starter</url>
+ <name>ApiNotice</name>
+```
+
+#### 3.2、注册sonatype账号
+
+你的项目首先要通过这个平台的审核，然后才能发布
+
+注册地址：[[Sign up for Jira - Sonatype JIRA](https://issues.sonatype.org/secure/Signup!default.jspa)](https://issues.sonatype.org/secure/Signup!default.jspa)
+
+#### 3.3、新建issue—提交申请
+
+![image-20221015154302730](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/202210151543009.png)
+
+![image-20221015154757018](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/202210151547144.png)
+
+新建之后，会有工作人员审核十几分分钟左右，如果有问题，他们会有评论，按照他们修改意见修改再提交就行。
+
+如果没有问题，他们则会让你在github上创建一个新的空仓库，用来验证github账号是不是你本人的，例如：Create a temporary, public repository called https://github.com/zglgithubx/OSSRH-85341 to verify github account ownership.创建之后再次提交就行。
+
+上面的操作顺利完成没有问题，会有这样的评论：
+
+![image-20221015155221597](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/202210151552721.png)
+
+
+
+#### 3.4、安装GPG工具
+
+这个工具是防止你的仓库代码被人修改，从而破坏代码。详细的请自行百度。
+
+[GPG](https://www.gnupg.org/download/)
+
+找到：![image-20221015200227664](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/202210152002891.png)
+
+下载之后，默认安装
+
+在控制台打印：gpg --version，判断是否完成成功
+
+#### 3.5、生成密钥
+
+使用管理员打开cmd
+
+生成key：gpg --gen-key
+
+会提示输入：用户名，邮箱，输入完成后输入o。
+
+![image-20221015200636057](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/202210152006150.png)
+
+
+
+回车后，会让你输入两次密码，然后ok，就会生成密钥。
 
 [发布项目到Maven中央仓库的最佳实践 - 简书 (jianshu.com)](https://www.jianshu.com/p/5f6135e1925f)
+
+#### 3.6、把key发送到中央仓库服务器，后面在上传时会做验证
+
+首先找到key，在安装的gpg客户端中找到密钥id，密钥id就是接下来需要发送的key
+
+![image-20221015201017643](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/202210152010750.png)
+
+执行命令：
+
+```
+//发送key
+gpg --keyserver keyserver.ubuntu.com --send-keys E1CED113257DC99A
+//判断key是否已经发送到服务器
+gpg --keyserver keyserver.ubuntu.com --recv-keys E1CED113257DC99A
+
+```
+
+![image-20221015201450241](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/202210152014339.png)
+
+显示以上结果代表已经发送成功
+
+#### 3.7、修改Maven配置和项目配置
+
+在Maven的setting.xml添加
+
+```
+   <!--  中央仓库个人存储库的账号密码 -->
+        <server>
+            <id>ossrh</id>
+            <username>自己的账号</username>
+            <password>自己的密码</password>
+        </server>
+
+```
+
+在项目的pom.xml添加，根据自己的项目进行修改
+
+```
+<!-- mvn clean deploy  -->
+    <!-- 开源许可证 -->
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://www.opensource.org/licenses/mit-license.php</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <!-- 源码信息 -->
+    <scm>
+        <url>https://github.com/zglgithubx/apinotice-spring-boot-starter</url>
+        <connection>scm:https://github.com/zglgithubx/apinotice-spring-boot-starter.git</connection>
+        <developerConnection>scm:https://github.com/zglgithubx/apinotice-spring-boot-starter.git</developerConnection>
+    </scm>
+
+    <!-- 个人信息,对应 gpg 配置 -->
+    <developers>
+        <developer>
+            <name>zhuguangliang</name>
+            <email>786945363@qq.com</email>
+            <timezone>+8</timezone>
+        </developer>
+    </developers>
+
+    <!-- 中央仓库配置id 需对应 settings.xml 的 server的id -->
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
+    <!-- 打包配置 -->
+    <build>
+        <finalName>apinotice-spring-boot-starter-${version}</finalName>
+        <plugins>
+            <!-- java-doc配置 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.10.4</version>
+                <configuration>
+                    <aggregate>true</aggregate>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <configuration> <!-- add this to disable checking -->
+                            <additionalparam>-Xdoclint:none</additionalparam>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- 使用source 进行jar打包-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.0.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- gpg 配置 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+```
+
+#### 3.8、上传仓库
+
+管理员身份打开 cmd 进入项目命令执行命令,注意在idea 编辑器中的终端无法执行 gpg 命令，无法进行上传操作
+
+```
+mvn clean deploy
+```
+
+如果下显示构建成功就代表已经上传成功，但是还需要验证发布
+
+#### 3.9、验证发布
+
+访问：[Nexus Repository Manager (sonatype.org)](https://s01.oss.sonatype.org/)
+
+点击右上角输入账号密码登录，与申请发布项目时一样
+
+登录之后点击，Staging Repositories
+
+![image-20221015202224501](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/202210152022669.png)
+
+会找到项目
+
+![image-20221015202728465](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/202210152027626.png)
+
+选中项目后，点击close，提交验证
+
+![image-20221015202809857](https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/202210152028050.png)
+
+提交后，如果验证通过，Release按钮会变为可点击的状态，点击Release按钮发布即可。
+
+发布成功后，会有邮箱提示：
+
+30分钟后可以在中央仓库中找打，4个小时后可以搜索到。
+
+Central sync is activated for io.github.zglgithubx. After you successfully release, your component will be available to the public on Central https://repo1.maven.org/maven2/, typically within 30 minutes, though updates to [https://search.maven.org](https://search.maven.org/) can take up to four hours.
+
+
+
