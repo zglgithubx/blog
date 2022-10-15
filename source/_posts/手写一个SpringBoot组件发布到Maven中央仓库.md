@@ -99,9 +99,7 @@ Version：RELEASE代表稳定版本，SNAPSHOT代表快照版本，如何项目�
 
 #### 1.4、写组件功能
 
-下面将以我的开源项目为例，进行说明，
-
-[GitHub地址]: https://github.com/zglgithubx/apinotice-spring-boot-starter
+下面将以我的开源项目为例，进行说明，[GitHub地址](https://github.com/zglgithubx/apinotice-spring-boot-starter)
 
 大致功能：使用AOP处理使用注解@Notice的方法，并发送邮件
 
@@ -262,6 +260,6 @@ io.github.zglgithubx.apinotice.NoticeAutoConfiguration
 
 #### 3.1、首先将项目推送到github仓库
 
-#### 3.2、以下教程一步步来就可以了
+#### 3.2、这里推荐以下博客进行
 
 [发布项目到Maven中央仓库的最佳实践 - 简书 (jianshu.com)](https://www.jianshu.com/p/5f6135e1925f)
