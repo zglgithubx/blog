@@ -774,15 +774,15 @@ clarity_analytics: #bqgaibizgv
 # Show number of visitors of each article.
 # You can visit https://www.leancloud.cn to get AppID and AppKey.
 leancloud_visitors:
-  enable: false
-  app_id: l6shF1T2mcN4674rNpnTFTVr-gzGzoHsz
-  app_key: 9pVSS2d9x47KuvakXxninnPg
+  enable: true
+  app_id: KihdNEwx4Gdfs5pUeaeqP4R0-MdYXbMMI
+  app_key: XbOw6DbQtiKvsv0KfRK31sGD
   # Required for apps from CN region
   server_url:
   # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
   # If you don't care about security in leancloud counter and just want to use it directly
   # (without hexo-leancloud-counter-security plugin), set `security` to `false`.
-  security: true
+  security: false
 
 # Another tool to show number of visitors to each article.
 # Visit https://console.firebase.google.com/u/0/ to get apiKey and projectId.
