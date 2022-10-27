@@ -649,7 +649,7 @@ waline:
   visitor: true
   recordIP: true
   # Waline server address url, you should set this to your own link
-  serverURL: https://waline-ten-pi.vercel.app
+  serverURL: vercel.marchsoft.club
   # Waline library CDN url, you can set this to your preferred CDN
   libUrl: https://unpkg.com/@waline/client@v2/dist/waline.js
   # Waline CSS styles CDN url, you can set this to your preferred CDN
@@ -659,7 +659,7 @@ waline:
     placeholder: 欢迎评论交流！ # Comment box placeholder
   # Custom emoji
   emoji:
-    - https://unpkg.com/@waline/emojis@1.0.1/weibo
+    - https://unpkg.com/@waline/emojis@1.1.0/bmoji
     # - //unpkg.com/@waline/emojis@1.0.1/alus
     # - //unpkg.com/@waline/emojis@1.0.1/bilibili
     # - //unpkg.com/@waline/emojis@1.0.1/qq
