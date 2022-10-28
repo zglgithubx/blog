@@ -476,11 +476,11 @@ exturl_icon: true
 # Google Webmaster tools verification.
 # See: https://developers.google.com/search
 
-google_site_verification:
+google_site_verification: Yph-CIXRjylSugVeXLCwtE_VVYSCtMrnMSksjiqdSAA
 
 # Bing Webmaster tools verification.
 # See: https://www.bing.com/webmasters
-bing_site_verification:
+bing_site_verification: 42F3B660910348CD10EA87790097FEC9
 
 # Yandex Webmaster tools verification.
 # See: https://webmaster.yandex.ru
@@ -488,7 +488,7 @@ yandex_site_verification:
 
 # Baidu Webmaster tools verification.
 # See: https://ziyuan.baidu.com/site
-baidu_site_verification:
+baidu_site_verification: HcdLc4SmlpZqORdi
 
 # ---------------------------------------------------------------
 # Third Party Plugins & Services Settings
