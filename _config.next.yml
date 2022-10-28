@@ -285,9 +285,9 @@ follow_me:
 # Related popular posts
 # Dependencies: https://github.com/sergeyzwezdin/hexo-related-posts
 related_posts:
-  enable: false
+  enable: true
   title: # Custom header, leave empty to use the default one
-  display_in_home: false
+  display_in_home: true
 
 # Post edit
 # Easily browse and edit blog source code online.
@@ -374,7 +374,7 @@ codeblock:
 back2top:
   enable: true
   # Back to top in sidebar.
-  sidebar: true
+  sidebar: false
   # Scroll percent label in b2t button.
   scrollpercent: true
 
@@ -647,7 +647,7 @@ waline:
   verify: false
   enableQQ: true # Whether to enable the Nickname box to automatically get QQ Nickname and QQ Avatar
   requiredFields: [nick, mail] # Set required fields: [nick] | [nick, mail]
-  visitor: true
+  visitor: false
   recordIP: true
   # Waline server address url, you should set this to your own link
   serverURL: vercel.marchsoft.club
@@ -667,9 +667,9 @@ waline:
     # - //unpkg.com/@waline/emojis@1.0.1/tieba
     # - //unpkg.com/@waline/emojis@1.0.1/tw-emoji
   # If false, comment count will only be displayed in post page, not in home page
-  comment_count: true
+  comment_count: false
   # Pageviews count, Note: You should not enable both `waline.pageview` and `leancloud_visitors`.
-  pageview: false
+  pageview: true
   # Comment infomation, valid meta are nick, mail and link
   meta:
     - nick
@@ -802,7 +802,7 @@ busuanzi_count:
   total_visitors_icon: fa fa-user
   total_views: true
   total_views_icon: fa fa-eye
-  post_views: true
+  post_views: false
   post_views_icon: far fa-eye
 
 # ---------------------------------------------------------------
