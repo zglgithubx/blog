@@ -1,8 +1,9 @@
 ---
 title: 手写一个SpringBoot组件发布到Maven中央仓库
-date: 2022-10-15 09:23:26
 categories: Spring
 tags: SpringBoot
+abbrlink: 54328
+date: 2022-10-15 09:23:26
 ---
 
 
