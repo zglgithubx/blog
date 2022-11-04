@@ -1,8 +1,9 @@
 ---
 title: Spring启动流程
-date: 2022-10-29 08:50:11
 categories: Java
 tags: Spring
+abbrlink: 7938
+date: 2022-10-29 08:50:11
 ---
 
 本文将以XMl定义bean的方式，从创建应用上下文对象剖析Spring的容器初始化，以及对单实例非懒加载 Bean 完成创建和Bean 属性的赋值注入和初始化，以及消息派发器的创建和启动过程消息的触发。
@@ -46,7 +47,7 @@ ApplicationContext ac=new ClassPathXmlApplicationContext("spring.xml")
     * 属性: validating=true//设置xml文件的验证标志，默认开启验证
     
   * 方法：setConfigLocations(configLocations)
-  
+
     * 进入类AbstractRefreshConfigApplicationContext
       * setConfigLocations(@Nullable String... locations)
         * this.configLocations[i]=resolvePathlocations[i]).trim()
@@ -55,74 +56,71 @@ ApplicationContext ac=new ClassPathXmlApplicationContext("spring.xml")
           * getEnvironment()：获取系统环境变量
           *  resolveRequiredPlaceholders(path)//处理占位符（路径上的，比如：spring-${username}.xml）
       * 属性：String[] configLocations：定义配置路径，默认是字符串数组
-  
+
   * 方法（核心）：refresh()
-  
-    * ```
-      
-      // Prepare this context for refreshing.
-      // 1. 前期，做容器刷新前的准备工作
-      prepareRefresh();
-      
-      // Tell the subclass to refresh the internal bean factory.
-      // 2. 读取并解析XML文件、创建BeanFactory
-      ConfigurableListableBeanFactory beanFactory = obtainFreshBeanFactory();
-      
-      // Prepare the bean factory for use in this context.
-      // 3. 预处理BeanFactory，给工厂设置属性值
-      prepareBeanFactory(beanFactory);
-      
-      // Allows post-processing of the bean factory in context subclasses.
-      // 4. BeanFactory初始化后，进行后置处理工作
-      postProcessBeanFactory(beanFactory);
-      
-      // Invoke factory processors registered as beans in the context.
-      // 5. 执行 BeanFactoryPostProcessors
-      invokeBeanFactoryPostProcessors(beanFactory);
-      
-      // Register bean processors that intercept bean creation.
-      // 6. 注册 Bean 后置处理器  [intercept bean creation.]
-      registerBeanPostProcessors(beanFactory);
-      
-      
-      // Initialize message source for this context.
-      // 7. 初始化MessageSource组件（做国际化功能，消息绑定，消息解析）
-      initMessageSource();
-      
-      // Initialize event multicaster for this context.
-      // 8. 初始化事件派发器
-      initApplicationEventMulticaster();
-      
-      // Initialize other special beans in specific context subclasses.
-      // 9. 留给子容器（子类）
-      onRefresh();
-      
-      // Check for listener beans and register them.
-      // 10. 给容器中将所有的项目中的 ApplicationListener 注册进来
-      registerListeners();
-      
-      // Instantiate all remaining (non-lazy-init) singletons.
-      // 11. 初始化所有的非懒加载单例Bean
-      finishBeanFactoryInitialization(beanFactory);
-      
-      // Last step: publish corresponding event.
-      // 12. 执行Spring容器的声明周期（启动）和发布事件
-      finishRefresh();
-      ```
 
-
+    ```
+    // Prepare this context for refreshing.
+    // 1. 前期，做容器刷新前的准备工作
+    prepareRefresh();
+    
+    // Tell the subclass to refresh the internal bean factory.
+    // 2. 读取并解析XML文件、创建BeanFactory
+    ConfigurableListableBeanFactory beanFactory = obtainFreshBeanFactory();
+    
+    // Prepare the bean factory for use in this context.
+    // 3. 预处理BeanFactory，给工厂设置属性值
+    prepareBeanFactory(beanFactory);
+    
+    // Allows post-processing of the bean factory in context subclasses.
+    // 4. BeanFactory初始化后，进行后置处理工作
+    postProcessBeanFactory(beanFactory);
+    
+    // Invoke factory processors registered as beans in the context.
+    // 5. 执行 BeanFactoryPostProcessors
+    invokeBeanFactoryPostProcessors(beanFactory);
+    
+    // Register bean processors that intercept bean creation.
+    // 6. 注册 Bean 后置处理器  [intercept bean creation.]
+    registerBeanPostProcessors(beanFactory);
+    
+    
+    // Initialize message source for this context.
+    // 7. 初始化MessageSource组件（做国际化功能，消息绑定，消息解析）
+    initMessageSource();
+    
+    // Initialize event multicaster for this context.
+    // 8. 初始化事件派发器
+    initApplicationEventMulticaster();
+    
+    // Initialize other special beans in specific context subclasses.
+    // 9. 留给子容器（子类）
+    onRefresh();
+    
+    // Check for listener beans and register them.
+    // 10. 给容器中将所有的项目中的 ApplicationListener 注册进来
+    registerListeners();
+    
+    // Instantiate all remaining (non-lazy-init) singletons.
+    // 11. 初始化所有的非懒加载单例Bean
+    finishBeanFactoryInitialization(beanFactory);
+    
+    // Last step: publish corresponding event.
+    // 12. 执行Spring容器的声明周期（启动）和发布事件
+    finishRefresh();
+    ```
 
 ### 细说refresh()
 
-#### 功能分类
-
-1 为准备环境
-
-2 3 4 5 6 为准备 BeanFactory
-
-7 8 9 10 12 为准备 ApplicationContext
-
-11 为初始化 BeanFactory 中非延迟单例 bean
+> 功能分类
+>
+> 1 为准备环境
+>
+> 2 3 4 5 6 为准备 BeanFactory
+>
+> 7 8 9 10 12 为准备 ApplicationContext
+>
+> 11 为初始化 BeanFactory 中非延迟单例 bean
 
 #### 1、prepareRefresh() 刷新前的预处理工作
 
