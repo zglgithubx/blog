@@ -48,10 +48,10 @@ darkmode: true
 # ---------------------------------------------------------------
 
 favicon:
-  small: /images/favicon-16x16-next.png
-  medium: /images/favicon-32x32-next.png
-  apple_touch_icon: /images/apple-touch-icon-next.png
-  safari_pinned_tab: /images/logo.svg
+  small: https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/202211112035310.png
+  medium: https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/202211112035268.png
+  apple_touch_icon: https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/202211112034961.png
+  safari_pinned_tab: https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/202211112033943.svg
   #android_manifest: /manifest.json
 
 # Custom Logo (Warning: Do not support scheme Mist)
@@ -138,7 +138,7 @@ sidebar:
 # Sidebar Avatar
 avatar:
   # Replace the default image and set the url here.
-  url: /img/logo.png
+  url: https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/202211112024281.png
   # If true, the avatar will be displayed in circle.
   rounded: true
   # If true, the avatar will be rotated with the cursor.
