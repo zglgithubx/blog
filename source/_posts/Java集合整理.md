@@ -1,5 +1,5 @@
 ---
-title: Java集合知识点整理
+title: Java集合整理
 categories: Java
 abbrlink: 58728
 date: 2022-11-05 17:16:02
@@ -7,6 +7,7 @@ tags:
 ---
 本文整理了，Java集合相关的知识点和面试题。
 <!-- more -->
+
 ### 概述
 
 #### 什么是集合？
