@@ -138,7 +138,7 @@ sidebar:
 # Sidebar Avatar
 avatar:
   # Replace the default image and set the url here.
-  url: https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/202211112024281.png
+  url: https://mynotepicture.oss-cn-hangzhou.aliyuncs.com/img/202212122125479.png
   # If true, the avatar will be displayed in circle.
   rounded: true
   # If true, the avatar will be rotated with the cursor.
