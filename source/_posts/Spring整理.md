@@ -288,15 +288,6 @@ public void methodB(){
 
 ### Spring如何解决循环依赖？
 
-#### Bean创建生命周期
-
-* Spring扫描类得到beandefinition
-
-* 根据将beandefinition注册到bean工厂中
-* bean工厂根据beandefinition中的信息通过反射创建bean对象
-* 如果对象中某个方法被AOP了，那么需要根据原始对象生成一个代理对象
-* 最后将bean对象放入到单例池中
-
 #### 什么是循环依赖？ 
 
 类与类之间的依赖关系形成了闭环，就会导致循环依赖问题的产生
@@ -313,7 +304,21 @@ public void methodB(){
 
 #### Spring是如何解决的？
 
-1、定义两个Bea n对象A、B，A和B相互引用
+核心：使用三级缓存，来打破循环
+
+三级缓存：
+
+* singletonObjects：单例池，存放的是完整的bean对象
+* earlySingletonObjects：二级缓存，存放的是还在创建中的bean对象
+* singletonFactories：三级缓存，存放的是bean对象的函数式接口
+
+介绍过程前回顾：
+
+Bean创建生命周期：实例化，属性填充、初始化
+
+过程：
+
+1、定义两个Bean对象A、B，A中引入B类型属性，B中引入A类型属性
 
 2、在实例化A对象后，会将生成A代理对象的lambda表达式放到三级缓存中
 
@@ -336,5 +341,13 @@ public void methodB(){
 
 #### 为什么要使用三级缓存呢？
 
-三级缓存存放的是lamda表达式，如果A被增强，则表达式获取的是A的代理对象。如果要使用二级缓存解决循环依赖，意味着所有Bean在实例化后就要完成AOP代理，这样违背了Spring设计的原则，Spring在设计之初就是通过`AnnotationAwareAspectJAutoProxyCreator`这个后置处理器来在Bean生命周期的最后一步来完成AOP代理，而不是在实例化后就立马进行AOP代理。
+三级缓存的value类型是ObjectFactory，是一个函数式接口，存在的意义是保证整个容器的运行过程中同名的bean对象只能有一个。
+
+如果bean对象的方法被AOP了，就需要生成一个代理对象替代原始对象，在实际的调用过程中，没有办法确定什么时候对象被使用，所以就要求某个对象被调用的时候，优先判断此对象是否需要被代理，类似一种回调机制的实现，因此传入lambda表达式的时候，可以通过表达式来执行对象的覆盖过程，getEarlyBeanReference()。
+
+因此，所有的bean对象在实例化之后优先放到三级缓存中，在后续的使用中，如果需要被代理则返回代理对象，如果不需要被代理，则直接返回代理对象。
+
+**另一种解释：**
+
+如果要使用二级缓存解决循环依赖，意味着所有Bean在实例化后就要完成AOP代理，这样违背了Spring设计的原则，Spring在设计之初就是通过`AnnotationAwareAspectJAutoProxyCreator`这个后置处理器来在Bean生命周期的最后一步来完成AOP代理，而不是在实例化后就立马进行AOP代理。
 
