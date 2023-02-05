@@ -153,7 +153,9 @@ site_state: true
 # Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
 social:
   GitHub: https://github.com/zglgithubx || fab fa-github
+  CSDN: https://blog.csdn.net/weixin_44932487 || fa fa-crosshairs
   E-Mail: 15036934261@163.com || fa fa-envelope
+
   # Weibo: https://weibo.com/u/xxxx || fab fa-weibo
   #Google: https://plus.google.com/yourname || fab fa-google
   #Twitter: https://twitter.com/yourname || fab fa-twitter
@@ -165,7 +167,7 @@ social:
 
 social_icons:
   enable: true
-  icons_only: true
+  icons_only: false
   transition: true
 
 # Blog rolls
