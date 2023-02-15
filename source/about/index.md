@@ -20,13 +20,15 @@ comments: false
 
 之后开始学习Java语言，里面提供了Java的学习路线，javaSE—SpringBoot，每个阶段都有相应的实践作业。
 
+每个阶段的学习，小组只提供路线，方法需要自己去摸索。
+
 JavaSE—>小游戏，项目地址：https://github.com/zglgithubx/java_se
 
 MySQL—>学生报道管理系统，项目地址：https://github.com/zglgithubx/java_mysql
 
 JavaEE—>使用JavaEE技术实现CRUD功能，项目地址：https://github.com/zglgithubx/java_web
 
-这个一年学了一些技术的使用
+这是一年时间学习到的技术栈：
 
 * 前端：HTML、CSS、JS、Jquery、Vue2
 * 后端：Java、Spring、SpringMVC、SpringBoot
@@ -34,13 +36,15 @@ JavaEE—>使用JavaEE技术实现CRUD功能，项目地址：https://github.com
 
 ### 大三（2020.7-2021.6）
 
-入职了从小组毕业的学长的创业公司（软筑科技）实习，从百度和知乎回来的大佬。
+入职了从小组毕业的学长的创业公司（软筑科技）实习，是两位从百度和知乎回来的学长创立的。
 
-刚开始的时候没有太多项目，日常都是学习Spring的相关技术栈。
+刚开始的时候是做些学校的一些项目，后面开始对接企业。
 
 #### 2021.1
 
-参与开发了第一个项目：运维平台，在这个项目中，我是做前端开发，用到了websocket和webshell的一些技术。
+参与开发了运维平台项目，在这个项目中，我是做前端开发，用到了websocket和webshell的一些技术。
+
+这的项目是公司内部用来管理项目部署的一个服务。
 
 #### 2021.5
 
