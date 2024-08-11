@@ -1,5 +1,4 @@
 name: CI
-
 on:
   push:
     branches:
@@ -8,93 +7,103 @@ on:
 env:
   GIT_USER: zglgithubx
   GIT_EMAIL: 786945363@qq.com
-  THEME_REPO: next-theme/hexo-theme-next
-  THEME_BRANCH: master
   DEPLOY_REPO: zglgithubx/zglgithubx.github.io
   DEPLOY_BRANCH: master
 
+# jobs:
+#   build:
+#     name: Build on node ${{ matrix.node_version }} and ${{ matrix.os }}
+#     runs-on: ubuntu-latest
+#     strategy:
+#       matrix:
+#         os: [ubuntu-latest]
+#         node_version: [20]
+
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v2
+#       - name: Cache node modules
+#         uses: actions/cache@v1
+#         id: cache
+#         with:
+#           path: node_modules
+#           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+#           restore-keys: |
+#             ${{ runner.os }}-node-
+
+#       - name: Checkout deploy repo
+#         uses: actions/checkout@v2
+#         with:
+#           repository: ${{ env.DEPLOY_REPO }}
+#           ref: ${{ env.DEPLOY_BRANCH }}
+#           path: .deploy_git
+
+#       - name: Use Node.js ${{ matrix.node_version }}
+#         uses: actions/setup-node@v1
+#         with:
+#           node-version: ${{ matrix.node_version }}
+
+#       - name: Configuration environment
+#         env:
+#           HEXO_DEPLOY_PRI: ${{secrets.HEXO_DEPLOY_PRI}}
+#         run: |
+#           sudo timedatectl set-timezone "Asia/Shanghai"
+#           mkdir -p ~/.ssh/
+#           echo "$HEXO_DEPLOY_PRI" > ~/.ssh/id_rsa
+#           chmod 600 ~/.ssh/id_rsa
+#           ssh-keyscan github.com >> ~/.ssh/known_hosts
+#           git config --global user.name $GIT_USER
+#           git config --global user.email $GIT_EMAIL
+
+#       - name: Install dependencies
+#         run: |
+#           npm install hexo-cli -g
+#           npm install
+
+#       - name: Deploy hexo
+#         run: |
+#           hexo clean
+#           hexo deploy
 jobs:
   build:
-    name: Build on node ${{ matrix.node_version }} and ${{ matrix.os }}
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-        node_version: [12.x]
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Cache node modules
-        uses: actions/cache@v1
-        id: cache
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.HEXO_DEPLOY_PRI }}
+          # If your repository depends on submodule, please see: https://github.com/actions/checkout
+          submodules: recursive
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          # Examples: 20, 18.19, >=16.20.2, lts/Iron, lts/Hydrogen, *, latest, current, node
+          # Ref: https://github.com/actions/setup-node#supported-version-syntax
+          node-version: "20"
+      - name: Cache NPM dependencies
+        uses: actions/cache@v4
         with:
           path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.OS }}-npm-cache
           restore-keys: |
-            ${{ runner.os }}-node-
-
-      - name: Checkout deploy repo
-        uses: actions/checkout@v2
+            ${{ runner.OS }}-npm-cache
+      - name: Install Dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          repository: ${{ env.DEPLOY_REPO }}
-          ref: ${{ env.DEPLOY_BRANCH }}
-          path: .deploy_git
-
-      - name: Use Node.js ${{ matrix.node_version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node_version }}
-
-      - name: Configuration environment
-        env:
-          HEXO_DEPLOY_PRI: ${{secrets.HEXO_DEPLOY_PRI}}
-        run: |
-          sudo timedatectl set-timezone "Asia/Shanghai"
-          mkdir -p ~/.ssh/
-          echo "$HEXO_DEPLOY_PRI" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
-          git config --global user.name $GIT_USER
-          git config --global user.email $GIT_EMAIL
-
-      - name: Install dependencies
-        run: |
-          npm install hexo-cli -g
-          npm install
-
-      - name: Deploy hexo
-        run: |
-          hexo clean
-          hexo deploy
-
-  # sync: #同步到gitee仓库
-  #   needs: build
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Sync to Gitee
-  #       uses: wearerequired/git-mirror-action@master
-  #       env:
-  #         SSH_PRIVATE_KEY: ${{ secrets.HEXO_DEPLOY_PRI }}
-  #       with:
-  #         # 来源仓库
-  #         source-repo: "git@github.com:zglgithubx/zglgithubx.github.io.git"
-  #         # 目标仓库
-  #         destination-repo: "git@gitee.com:zglgithubx/zglgithubx.git"
-
-  # reload-pages:
-  #   needs: sync
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Build Gitee Pages
-  #       uses: yanglbme/gitee-pages-action@main
-  #       with:
-  #         # 注意替换为你的 Gitee 用户名
-  #         gitee-username: zglgithubx
-  #         # 注意在 Settings->Secrets 配置 GITEE_PASSWORD
-  #         gitee-password: ${{ secrets.GITEE_PASSWORD }}
-  #         # 注意替换为你的 Gitee 仓库，仓库名严格区分大小写，请准确填写，否则会出错
-  #         gitee-repo: zglgithubx/zglgithubx
-  #         # 要部署的分支，默认是 master，若是其他分支，则需要指定（指定的分支必须存在）
-  #         branch: master
+          path: ./public
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
